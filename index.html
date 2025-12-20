@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFit Vallecas | Semana 22-27 Diciembre 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === VARIABLES MEJORADAS === */
+        :root {
+            --burdeos: #8B1538;
+            --burdeos-glow: #ff2a6d;
+            --negro: #0a0a0a;
+            --negro-suave: #1a1a1a;
+            --gris-oscuro: #2a2a2a;
+            --verde-haltero: #00ff88;
+            --verde-haltero-glow: #80ffc0;
+            --celeste-endurance: #00d4ff;
+            --celeste-endurance-glow: #80eaff;
+            --rojo-crossfit: #ff0055;
+            --rojo-crossfit-glow: #ff80aa;
+            --texto-principal: #f0f0f0;
+            --texto-secundario: #b0b0b0;
+            --oro-navidad: #ffd700;
+            --oro-navidad-glow: #ffed80;
+            
+            /* Nuevas variables para efectos */
+            --card-border-radius: 20px;
+            --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-hard: 0 15px 50px rgba(139, 21, 56, 0.4);
+        }
+
+        /* === RESET MEJORADO === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: 
+                radial-gradient(ellipse at top, rgba(139, 21, 56, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, var(--negro) 0%, var(--negro-suave) 50%, #2a0a14 100%);
+            background-attachment: fixed;
+            color: var(--texto-principal);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* === EFECTO PARTÍCULAS FONDO === */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: var(--oro-navidad);
+            opacity: 0;
+            animation: floatParticle 20s infinite linear;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* === CONTENEDOR PRINCIPAL === */
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* === HEADER EPICO === */
+        header {
+            text-align: center;
+            margin: 0 auto 60px;
+            padding: 50px 30px;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(139, 21, 56, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 70% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 30%),
+                linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(10, 10, 10, 0.8) 100%);
+            border: 2px solid transparent;
+            border-radius: var(--card-border-radius);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-soft), inset 0 0 50px rgba(139, 21, 56, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--burdeos), 
+                var(--rojo-crossfit), 
+                var(--oro-navidad), 
+                var(--celeste-endurance), 
+                var(--burdeos));
+            background-size: 400% 400%;
+            z-index: -1;
+            border-radius: var(--card-border-radius);
+            opacity: 0.5;
+            animation: gradientShift 8s ease infinite;
+            filter: blur(5px);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.02) 2px,
+                rgba(255, 255, 255, 0.02) 4px
+            );
+            pointer-events: none;
+            z-index: 1;
+            border-radius: var(--card-border-radius);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* === LOGO ANIMADO === */
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            position: relative;
+            animation: floatLogo 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 25px rgba(255, 0, 85, 0.7));
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+            }
+            33% { 
+                transform: translateY(-15px) rotate(2deg); 
+            }
+            66% { 
+                transform: translateY(5px) rotate(-2deg); 
+            }
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === TITULO PRINCIPAL === */
+        h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 5em;
+            font-weight: 800;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, 
+                var(--burdeos) 0%, 
+                #ff0055 30%, 
+                #ff2a6d 70%, 
+                #ff0055 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 40px rgba(139, 21, 56, 0.5);
+            line-height: 1;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: var(--texto-secundario);
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+
+        .week-dates {
+            font-size: 1.2em;
+            color: var(--oro-navidad);
+            font-weight: 600;
+            margin-top: 15px;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .week-dates::before,
+        .week-dates::after {
+            content: '✦';
+            font-size: 1.5em;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* === LEYENDA MEJORADA === */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid transparent;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .legend-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .legend-item.haltero:hover { border-color: var(--verde-haltero); }
+        .legend-item.crossfit:hover { border-color: var(--rojo-crossfit); }
+        .legend-item.endurance:hover { border-color: var(--celeste-endurance); }
+
+        .legend-bar {
+            width: 50px;
+            height: 6px;
+            border-radius: 3px;
+            box-shadow: 0 0 15px currentColor;
+            transition: var(--transition-smooth);
+        }
+
+        .legend-bar.haltero { 
+            background: var(--verde-haltero); 
+            box-shadow: 0 0 15px var(--verde-haltero);
+        }
+        .legend-bar.crossfit { 
+            background: var(--rojo-crossfit); 
+            box-shadow: 0 0 15px var(--rojo-crossfit);
+        }
+        .legend-bar.endurance { 
+            background: var(--celeste-endurance); 
+            box-shadow: 0 0 15px var(--celeste-endurance);
+        }
+
+        /* === FILTROS DE CATEGORÍA === */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            background: rgba(26, 26, 26, 0.7);
+            border: 2px solid var(--burdeos);
+            border-radius: 50px;
+            color: var(--texto-principal);
+            font-family: 'Teko', sans-serif;
+            font-size: 1.3em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 21, 56, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--burdeos);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 21, 56, 0.5);
+        }
+
+        /* === GRID DE SEMANA === */
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        /* === TARJETAS DE DÍA === */
+        .day-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9) 0%, rgba(42, 42, 42, 0.7) 100%);
+            border-radius: var(--card-border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(139, 21, 56, 0.3);
+            transition: var(--transition-smooth);
+            animation: fadeInUp 0.6s ease backwards;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--burdeos), 
+                var(--rojo-crossfit), 
+                var(--burdeos));
+            opacity: 0.7;
+        }
+
+        .day-card.festivo {
+            border: 2px solid var(--oro-navidad);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), var(--shadow-soft);
+        }
+
+        .day-card.festivo::before {
+            background: linear-gradient(90deg, 
+                var(--oro-navidad), 
+                #ffed80, 
+                var(--oro-navidad));
+        }
+
+        .day-card:nth-child(1) { animation-delay: 0.1s; }
+        .day-card:nth-child(2) { animation-delay: 0.2s; }
+        .day-card:nth-child(3) { animation-delay: 0.3s; }
+        .day-card:nth-child(4) { animation-delay: 0.4s; }
+        .day-card:nth-child(5) { animation-delay: 0.5s; }
+        .day-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .day-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--burdeos);
+            box-shadow: var(--shadow-hard);
+        }
+
+        /* === ENCABEZADO DE DÍA === */
+        .day-header {
+            background: linear-gradient(135deg, var(--burdeos) 0%, #a0183d 100%);
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .day-header.festivo {
+            background: linear-gradient(135deg, var(--oro-navidad) 0%, #ffaa00 100%);
+        }
+
+        .day-name {
+            font-family: 'Teko', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: white;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .day-date {
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .festivo-badge {
+            display: inline-block;
+            background: var(--oro-navidad);
+            color: var(--negro);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 800;
+            margin-top: 12px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: pulseBadge 2s infinite;
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* === SECCIONES DE PROGRAMA === */
+        .program-section {
+            padding: 28px;
+            border-left: 6px solid;
+            margin: 0;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .program-section:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .program-section.haltero {
+            border-left-color: var(--verde-haltero);
+            background: linear-gradient(90deg, rgba(0, 255, 136, 0.07) 0%, transparent 100%);
+        }
+
+        .program-section.crossfit {
+            border-left-color: var(--rojo-crossfit);
+            background: linear-gradient(90deg, rgba(255, 0, 85, 0.07) 0%, transparent 100%);
+        }
+
+        .program-section.endurance {
+            border-left-color: var(--celeste-endurance);
+            background: linear-gradient(90deg, rgba(0, 212, 255, 0.07) 0%, transparent 100%);
+        }
+
+        .program-section.festivo {
+            border-left-color: var(--oro-navidad);
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);
+            text-align: center;
+            padding: 50px 28px;
+        }
+
+        .program-section:not(:last-child) {
+            border-bottom: 1px solid rgba(139, 21, 56, 0.2);
+        }
+
+        /* === TÍTULOS DE PROGRAMA === */
+        .program-title {
+            font-family: 'Teko', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+
+        .program-title::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px currentColor;
+            flex-shrink: 0;
+        }
+
+        .program-section.haltero .program-title {
+            color: var(--verde-haltero);
+        }
+
+        .program-section.crossfit .program-title {
+            color: var(--rojo-crossfit);
+        }
+
+        .program-section.endurance .program-title {
+            color: var(--celeste-endurance);
+        }
+
+        .program-section.festivo .program-title {
+            color: var(--oro-navidad);
+            justify-content: center;
+            font-size: 2.8em;
+        }
+
+        .festivo-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            display: block;
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .festivo-text {
+            color: var(--oro-navidad);
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* === CONTENIDO DE WORKOUT === */
+        .workout-content {
+            color: var(--texto-principal);
+            line-height: 1.9;
+            font-size: 1em;
+        }
+
+        .workout-content strong {
+            color: white;
+            font-weight: 700;
+        }
+
+        .workout-title {
+            font-weight: 800;
+            color: white;
+            font-size: 1.2em;
+            margin: 20px 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .workout-title::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: var(--burdeos);
+        }
+
+        .workout-details {
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 3px solid rgba(160, 160, 160, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .workout-details:hover {
+            border-left-color: var(--burdeos);
+        }
+
+        /* === LISTAS DE EJERCICIOS === */
+        .exercise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exercise-list li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 28px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .exercise-list li:last-child {
+            border-bottom: none;
+        }
+
+        .exercise-list li:hover {
+            color: white;
+            padding-left: 35px;
+        }
+
+        .exercise-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--burdeos);
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        .exercise-list li:hover::before {
+            transform: scale(1.3);
+            color: var(--rojo-crossfit);
+        }
+
+        /* === BADGES ESPECIALES === */
+        .hero-wod, .team-wod, .christmas-wod {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px currentColor; }
+            to { box-shadow: 0 0 20px currentColor; }
+        }
+
+        .hero-wod {
+            background: linear-gradient(135deg, rgba(139, 21, 56, 0.3) 0%, rgba(255, 0, 85, 0.2) 100%);
+            border-color: var(--burdeos);
+            color: #ff8090;
+        }
+
+        .team-wod {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 255, 136, 0.2) 100%);
+            border-color: var(--celeste-endurance);
+            color: #80eaff;
+        }
+
+        .christmas-wod {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.4) 0%, rgba(139, 21, 56, 0.3) 100%);
+            border-color: var(--oro-navidad);
+            color: var(--oro-navidad);
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 2px solid rgba(139, 21, 56, 0.3);
+            color: var(--texto-secundario);
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .coach-signature {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.3em;
+            color: var(--oro-navidad);
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* === RESPONSIVE MEJORADO === */
+        @media (max-width: 1200px) {
+            .week-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 4em;
+            }
+            
+            .legend {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 3em;
+                letter-spacing: 3px;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .week-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .legend {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 1.1em;
+            }
+            
+            .day-name {
+                font-size: 2.5em;
+            }
+            
+            .program-section {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .week-dates {
+                font-size: 1em;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .week-dates::before,
+            .week-dates::after {
+                display: none;
+            }
+            
+            .program-title {
+                font-size: 1.7em;
+            }
+        }
+
+        /* === CLASES PARA FILTROS JS === */
+        .day-card.hidden {
+            opacity: 0.3;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+
+        .program-section.hidden {
+            opacity: 0.3;
+            transform: translateX(-10px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Estrella mejorada -->
+                    <path d="M50 10 L60 40 L90 40 L67 57 L77 87 L50 70 L23 87 L33 57 L10 40 L40 40 Z" 
+                          fill="#ff0055" stroke="#ff2a6d" stroke-width="2.5">
+                        <animate attributeName="fill" values="#ff0055;#ff2a6d;#ff0055" dur="3s" repeatCount="indefinite" />
+                    </path>
+                    <!-- Cráneo mejorado -->
+                    <ellipse cx="50" cy="50" rx="18" ry="20" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
+                    <circle cx="43" cy="48" r="3.5" fill="#ffffff">
+                        <animate attributeName="r" values="3.5;4;3.5" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="57" cy="48" r="3.5" fill="#ffffff">
+                        <animate attributeName="r" values="3.5;4;3.5" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <path d="M45 60 Q50 63 55 60" stroke="#ffffff" stroke-width="2" fill="none"/>
+                    <!-- Cuernos mejorados -->
+                    <path d="M50 28 L48 35 L50 30 L52 35 Z" fill="#ffffff" stroke="#ff2a6d" stroke-width="1">
+                        <animateTransform attributeName="transform" type="rotate" values="0 50 30;5 50 30;0 50 30" dur="4s" repeatCount="indefinite" />
+                    </path>
+                    <path d="M50 72 L48 65 L50 70 L52 65 Z" fill="#ffffff" stroke="#ff2a6d" stroke-width="1">
+                        <animateTransform attributeName="transform" type="rotate" values="0 50 70;-5 50 70;0 50 70" dur="4s" repeatCount="indefinite" />
+                    </path>
+                    <!-- Anillo exterior -->
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(139,21,56,0.5)" stroke-width="1" stroke-dasharray="5,3">
+                        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="20s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+            <h1>CrossFit Vallecas</h1>
+            <p class="subtitle">PROGRAMACIÓN SEMANAL | COACHES</p>
+            <p class="week-dates">22 - 27 DICIEMBRE 2025</p>
+
+            <div class="legend">
+                <div class="legend-item haltero">
+                    <div class="legend-bar haltero"></div>
+                    <span>HALTEROFILIA</span>
+                </div>
+                <div class="legend-item crossfit">
+                    <div class="legend-bar crossfit"></div>
+                    <span>CROSSFIT</span>
+                </div>
+                <div class="legend-item endurance">
+                    <div class="legend-bar endurance"></div>
+                    <span>ENDURANCE</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filtros de categoría -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos los días</button>
+            <button class="filter-btn" data-filter="haltero">Solo Halterofilia</button>
+            <button class="filter-btn" data-filter="crossfit">Solo CrossFit</button>
+            <button class="filter-btn" data-filter="endurance">Solo Endurance</button>
+            <button class="filter-btn" data-filter="festivo">Días Festivos</button>
+        </div>
+
+        <div class="week-grid">
+            <!-- LUNES 22/12 -->
+            <div class="day-card" data-categories="haltero crossfit endurance">
+                <div class="day-header">
+                    <div class="day-name">Lunes</div>
+                    <div class="day-date">22/12/2025</div>
+                </div>
+
+                <div class="program-section haltero">
+                    <div class="program-title">Halterofilia</div>
+                    <div class="workout-content">
+                        <ul class="exercise-list">
+                            <li>Squats Cleans</li>
+                            <li>Push Press</li>
+                            <li>Push Jerks</li>
+                            <li>Split Jerk</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-section crossfit">
+                    <div class="program-title">CrossFit</div>
+                    <div class="workout-content">
+                        <div class="workout-title">AMRAP 12'</div>
+                        <div class="workout-details">
+                            12 Kettlebell Jerks<br>
+                            6 Toes-to-Bars<br>
+                            12 Jumping Lunge
+                        </div>
+
+                        <div class="workout-title">5 Rounds</div>
+                        <div class="workout-details">
+                            9 Kettlebell Snatches (left)<br>
+                            3 Burpees<br>
+                            9 Kettlebell Snatches (right)<br>
+                            3 Burpees<br>
+                            9 Kettlebell Thrusters<br>
+                            3 Bar Muscle-Ups
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-section endurance">
+                    <div class="program-title">Endurance</div>
+                    <div class="workout-content">
+                        <div class="workout-title">Every minute on the minute For 30 minutes complete:</div>
+                        <div class="workout-details">
+                            <strong>Min 1:</strong> 100 mts Run<br>
+                            <strong>Min 2:</strong> 15 Thrusters<br>
+                            <strong>Min 3:</strong> 10 Burpees<br>
+                            <strong>Min 4:</strong> 15 DB Snatches<br>
+                            <strong>Min 5:</strong> 10 Calories
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARTES 23/12 -->
+            <div class="day-card" data-categories="haltero crossfit endurance">
+                <div class="day-header">
+                    <div class="day-name">Martes</div>
+                    <div class="day-date">23/12/2025</div>
+                </div>
+
+                <div class="program-section haltero">
+                    <div class="program-title">Halterofilia</div>
+                    <div class="workout-content">
+                        <ul class="exercise-list">
+                            <li>Power Snatches</li>
+                            <li>Squat Snatches</li>
+                            <li>Push Jerk</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-section crossfit">
+                    <div class="program-title">CrossFit</div>
+                    <div class="workout-content">
+                        <div class="team-wod">👥 TEAM OF 4</div>
+                        <div class="workout-title">AMRAP 30'</div>
+                        <div class="workout-details">
+                            <strong>Run 400 mts Together</strong><br><br>
+                            <strong>Teammate A:</strong> 25 Deadlift (60kg/40kg)<br>
+                            <strong>Teammate B:</strong> 20 Burpee Pull-Ups<br>
+                            <strong>Teammate C:</strong> Max Hang C&J (60/40)<br>
+                            <strong>Teammate
