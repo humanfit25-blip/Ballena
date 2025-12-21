@@ -1,231 +1,307 @@
 {
-    "boxName": "CrossFit Vallecas",
-    "subtitle": "PROGRAMACIÓN SEMANAL",
-    "weekDates": "29 DICIEMBRE - 3 ENERO 2026",
-    "isFestive": true,
-    "coaches": "Álex, María, Carlos",
-    "specialNote": "🎄 SEMANA DE NAVIDAD",
-    "days": [
+  "boxName": "CrossFit Vallecas",
+  "subtitle": "PROGRAMACIÓN SEMANAL",
+  "weekDates": "6 - 12 ENERO 2025",
+  "isFestive": false,
+  "coaches": "Asmil, Equipo CFV",
+  "specialNote": "",
+  "days": [
+    {
+      "name": "Lunes",
+      "date": "2025-01-06",
+      "isFestive": true,
+      "festiveBadge": "👑 DÍA DE REYES",
+      "sections": [
         {
-            "name": "Lunes",
-            "date": "2025-12-29",
-            "isFestive": false,
-            "sections": [
-                {
-                    "type": "haltero",
-                    "title": "Halterofilia",
-                    "exercises": [
-                        "Power Clean + Front Squat",
-                        "Snatch Balance",
-                        "Clean Pull"
-                    ]
-                },
-                {
-                    "type": "crossfit",
-                    "title": "CrossFit",
-                    "workoutTitle": "AMRAP 12'",
-                    "workoutDetails": [
-                        "12 Kettlebell Jerks (24/16kg)",
-                        "6 Toes-to-Bars",
-                        "12 Jumping Lunges"
-                    ]
-                },
-                {
-                    "type": "endurance",
-                    "title": "CrossFit Endurance",
-                    "workoutTitle": "Running",
-                    "workoutDetails": [
-                        "6 x 400m",
-                        "Descanso: 90 segundos entre series"
-                    ]
-                }
-            ]
+          "type": "haltero",
+          "title": "FESTIVO",
+          "isFestive": true,
+          "icon": "👑",
+          "content": "¡Feliz Día de Reyes!"
         },
         {
-            "name": "Martes",
-            "date": "2025-12-30",
-            "isFestive": false,
-            "sections": [
-                {
-                    "type": "haltero",
-                    "title": "Halterofilia",
-                    "exercises": [
-                        "Back Squat",
-                        "Push Press",
-                        "Good Mornings"
-                    ]
-                },
-                {
-                    "type": "crossfit",
-                    "title": "CrossFit",
-                    "badges": [
-                        {
-                            "type": "hero",
-                            "text": "⭐ HERO WOD"
-                        }
-                    ],
-                    "workoutTitle": "\"ANNIE\"",
-                    "workoutDetails": [
-                        "50-40-30-20-10:",
-                        "Double Unders",
-                        "Sit-Ups"
-                    ]
-                },
-                {
-                    "type": "endurance",
-                    "title": "CrossFit Endurance",
-                    "workoutTitle": "Bike",
-                    "workoutDetails": [
-                        "4 Rounds:",
-                        "5 min steady pace",
-                        "2 min sprint",
-                        "Rest 3 min"
-                    ]
-                }
-            ]
+          "type": "crossfit",
+          "title": "FESTIVO",
+          "isFestive": true,
+          "icon": "👑",
+          "content": "Descanso y recuperación"
         },
         {
-            "name": "Miércoles",
-            "date": "2025-12-31",
-            "isFestive": false,
-            "sections": [
-                {
-                    "type": "haltero",
-                    "title": "Halterofilia",
-                    "exercises": [
-                        "Snatch Complex",
-                        "Overhead Squat",
-                        "Snatch Pull"
-                    ]
-                },
-                {
-                    "type": "crossfit",
-                    "title": "CrossFit",
-                    "workoutTitle": "For Time (20' cap)",
-                    "workoutDetails": [
-                        "21-15-9:",
-                        "Thrusters (42.5/30kg)",
-                        "Pull-Ups",
-                        "Box Jumps (60/50cm)"
-                    ]
-                },
-                {
-                    "type": "endurance",
-                    "title": "CrossFit Endurance",
-                    "workoutTitle": "Row",
-                    "workoutDetails": [
-                        "5 x 500m",
-                        "Descanso: 2 minutos"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Jueves",
-            "date": "2026-01-01",
-            "isFestive": true,
-            "festiveBadge": "🎉 AÑO NUEVO 🎉",
-            "sections": [
-                {
-                    "type": "haltero",
-                    "title": "FESTIVO",
-                    "isFestive": true,
-                    "icon": "🎊",
-                    "content": "¡Feliz Año Nuevo!"
-                },
-                {
-                    "type": "crossfit",
-                    "title": "FESTIVO",
-                    "isFestive": true,
-                    "icon": "🎊",
-                    "content": "¡Descansa y celebra!"
-                },
-                {
-                    "type": "endurance",
-                    "title": "FESTIVO",
-                    "isFestive": true,
-                    "icon": "🎊",
-                    "content": "Volvemos el viernes"
-                }
-            ]
-        },
-        {
-            "name": "Viernes",
-            "date": "2026-01-02",
-            "isFestive": false,
-            "sections": [
-                {
-                    "type": "haltero",
-                    "title": "Halterofilia",
-                    "exercises": [
-                        "Clean & Jerk",
-                        "Front Squat",
-                        "Romanian Deadlift"
-                    ]
-                },
-                {
-                    "type": "crossfit",
-                    "title": "CrossFit",
-                    "workoutTitle": "3 Rounds For Time",
-                    "workoutDetails": [
-                        "400m Run",
-                        "15 Power Cleans (60/40kg)",
-                        "30 Wall Balls (9/6kg)"
-                    ]
-                },
-                {
-                    "type": "endurance",
-                    "title": "CrossFit Endurance",
-                    "workoutTitle": "Running",
-                    "workoutDetails": [
-                        "8 x 200m sprints",
-                        "Rest: 60 segundos"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Sábado",
-            "date": "2026-01-03",
-            "isFestive": false,
-            "sections": [
-                {
-                    "type": "haltero",
-                    "title": "Halterofilia",
-                    "exercises": [
-                        "Snatch",
-                        "Overhead Squat",
-                        "Snatch Balance"
-                    ]
-                },
-                {
-                    "type": "crossfit",
-                    "title": "CrossFit",
-                    "badges": [
-                        {
-                            "type": "team",
-                            "text": "👥 TEAM WOD"
-                        }
-                    ],
-                    "workoutTitle": "En parejas - 30'",
-                    "workoutDetails": [
-                        "100 Cal Assault Bike",
-                        "80 Burpees",
-                        "60 T2B",
-                        "40 DB Snatches (22.5/15kg)",
-                        "20 Bar Muscle-Ups"
-                    ]
-                },
-                {
-                    "type": "endurance",
-                    "title": "CrossFit Endurance",
-                    "workoutTitle": "Long Run",
-                    "workoutDetails": [
-                        "5K steady pace",
-                        "Ritmo conversacional"
-                    ]
-                }
-            ]
+          "type": "endurance",
+          "title": "FESTIVO",
+          "isFestive": true,
+          "icon": "👑",
+          "content": "Volvemos el martes"
         }
-    ]
+      ]
+    },
+    {
+      "name": "Martes",
+      "date": "2025-01-07",
+      "isFestive": false,
+      "sections": [
+        {
+          "type": "haltero",
+          "title": "Halterofilia",
+          "exercises": [
+            "Hang Muscle Clean + Hang Power Clean + Front Squat (1+1+2) @ 52-62%",
+            "Hang Clean from knee (2 reps @ 67%)",
+            "Clean Grip RDL @ 52%"
+          ]
+        },
+        {
+          "type": "crossfit",
+          "title": "CrossFit",
+          "workoutTitle": "For Time (15' cap)",
+          "workoutDetails": [
+            "A) Every 90\" x 12': 6 Front Squats @ 67%",
+            "",
+            "B) For Time:",
+            "50 Wall Balls (9/6kg)",
+            "40 DB Front Rack Lunges (22.5/15kg each)",
+            "30 Box Jumps (60/50cm)",
+            "20 Pull-Ups",
+            "10 DB Thrusters (22.5/15kg each)",
+            "",
+            "C) EMOM 6': V-Ups + Hollow Rocks"
+          ]
+        },
+        {
+          "type": "endurance",
+          "title": "CrossFit Endurance",
+          "workoutTitle": "EMOM 40' (5 stations x 8 rounds)",
+          "workoutDetails": [
+            "Min 1: 100m Run",
+            "Min 2: 15 Cal Row",
+            "Min 3: 14 KB Swings (20/12kg)",
+            "Min 4: 20 Air Squats",
+            "Min 5: 12 Cal Bike"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Miércoles",
+      "date": "2025-01-08",
+      "isFestive": false,
+      "sections": [
+        {
+          "type": "haltero",
+          "title": "Halterofilia",
+          "exercises": [
+            "Jerk Balance + Push Jerk (2+2) @ 62-67%",
+            "Split Jerk from rack @ 62-75%",
+            "Behind Neck Press + Strict Press"
+          ]
+        },
+        {
+          "type": "crossfit",
+          "title": "CrossFit",
+          "workoutTitle": "5 Rounds For Time (12' cap)",
+          "workoutDetails": [
+            "A) Every 2:00 x 16': Strict Press - Build to Heavy 5 @ RPE 8",
+            "",
+            "B) 5 Rounds:",
+            "8 Hang Clean and Jerk (50/35kg)",
+            "15 Toes-to-Bar",
+            "200m Run",
+            "",
+            "C) Accessory EMOM 6': DB Raises + Curls + Triceps"
+          ]
+        },
+        {
+          "type": "endurance",
+          "title": "CrossFit Endurance",
+          "workoutTitle": "Chipper en parejas (35' cap)",
+          "workoutDetails": [
+            "Compañero A: 2000m Row → 1600m Run → 1200m Row → 800m Run",
+            "Compañero B: Max KB Swings → Max DB Snatch → Max Air Squats → Max Burpees"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jueves",
+      "date": "2025-01-09",
+      "isFestive": false,
+      "sections": [
+        {
+          "type": "haltero",
+          "title": "Halterofilia",
+          "exercises": [
+            "Clean Pull + Hang Power Clean (2+1) @ 52-62%",
+            "Power Clean + Front Squat (1+2) @ 62-70%",
+            "Clean Pull @ 82% + Good Mornings"
+          ]
+        },
+        {
+          "type": "crossfit",
+          "title": "CrossFit",
+          "workoutTitle": "For Time (18' cap)",
+          "workoutDetails": [
+            "A) Every 90\" x 15': 5 Back Squats @ 72% + 8 T2B + 12 V-Ups",
+            "",
+            "B) For Time:",
+            "60 Cal Row",
+            "50 KB Front Rack Lunges",
+            "40 Box Jump-Overs (60/50cm)",
+            "30 KB Swings (32/24kg)",
+            "20 Burpees Over DB"
+          ]
+        },
+        {
+          "type": "endurance",
+          "title": "CrossFit Endurance",
+          "workoutTitle": "En parejas - 2' ON / 2' OFF x 32'",
+          "workoutDetails": [
+            "Set 1: 200m Run + Max Devil Press (15/10kg)",
+            "Set 2: 12 Cal + Max Double Unders",
+            "Set 3: 200m Run + Max KB Swings (20/12kg)",
+            "Set 4: 12 Front Squats + Max Burpees"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Viernes",
+      "date": "2025-01-10",
+      "isFestive": false,
+      "sections": [
+        {
+          "type": "haltero",
+          "title": "Halterofilia",
+          "exercises": [
+            "Snatch Pull + Hang Power Snatch + OHS (1+1+2) @ 62-70%",
+            "Squat Snatch from floor @ 67-75%",
+            "Snatch Pull @ 87%"
+          ]
+        },
+        {
+          "type": "crossfit",
+          "title": "CrossFit",
+          "badges": [
+            {
+              "type": "benchmark",
+              "text": "⭐ FRAN"
+            }
+          ],
+          "workoutTitle": "\"FRAN\" + Death By",
+          "workoutDetails": [
+            "A) Every 1:00 x 10': Weighted Pull-Ups (Heavy 3) + Squat Clean 90%",
+            "",
+            "B) \"FRAN\" - 21-15-9:",
+            "Thrusters (43/30kg)",
+            "Pull-Ups",
+            "",
+            "C) Death By Burpee Box Jump-Overs (60/50cm)",
+            "Min 1: 1 rep, Min 2: 2 reps... hasta fallo"
+          ]
+        },
+        {
+          "type": "endurance",
+          "title": "CrossFit Endurance",
+          "workoutTitle": "EMOM 36' (6 stations x 6 rounds)",
+          "workoutDetails": [
+            "Min 1: 45\" Assault Bike (Zone 4)",
+            "Min 2: 45\" Row (Zone 2)",
+            "Min 3: 100m Run",
+            "Min 4: 12 KB Swings (24/16kg)",
+            "Min 5: 15 Air Squats",
+            "Min 6: 45\" Single Unders"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sábado",
+      "date": "2025-01-11",
+      "isFestive": false,
+      "sections": [
+        {
+          "type": "haltero",
+          "title": "Halterofilia",
+          "exercises": [
+            "Clean & Jerk @ 72%",
+            "Front Squat @ 67% (tempo 3-1-1)",
+            "Accessories + Mobility & Recovery"
+          ]
+        },
+        {
+          "type": "crossfit",
+          "title": "CrossFit",
+          "badges": [
+            {
+              "type": "team",
+              "text": "👥 TEAM WOD"
+            }
+          ],
+          "workoutTitle": "En parejas - AMRAP 30'",
+          "workoutDetails": [
+            "400m Run together",
+            "30 Synchro DB Snatch (22.5/15kg each)",
+            "40 Partner Wall Balls (9/6kg)",
+            "50 Synchro Box Jump-Overs (60/50cm)",
+            "20 Synchro Deadlifts (80/55kg)",
+            "30 Synchro Burpees"
+          ]
+        },
+        {
+          "type": "endurance",
+          "title": "CrossFit Endurance",
+          "workoutTitle": "Chipper For Time (40' cap)",
+          "workoutDetails": [
+            "3000m Row + 60 Lunges",
+            "2400m Row + 40 KB Goblet Squats (24/16kg)",
+            "1800m Row + 60 Air Squats",
+            "1200m Row + 40 KB Swings (20/12kg)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Domingo",
+      "date": "2025-01-12",
+      "isFestive": false,
+      "sections": [
+        {
+          "type": "haltero",
+          "title": "Halterofilia",
+          "exercises": [
+            "Snatch Pull (1\" pause) + Snatch High Pull @ 72-77%",
+            "Power Snatch from blocks @ 62-70%",
+            "Overhead Squat @ 67% + Snatch Grip RDL"
+          ]
+        },
+        {
+          "type": "crossfit",
+          "title": "CrossFit",
+          "workoutTitle": "AMRAP 18'",
+          "workoutDetails": [
+            "A) Every 2:00 x 10': 8 Strict HSPU + 30\" L-Sit + 10 Ring Rows",
+            "",
+            "B) AMRAP 18':",
+            "8 Pull-Ups (C2B intent)",
+            "12 Push-Ups",
+            "16 Air Squats",
+            "20 Double Unders",
+            "",
+            "C) Tabata 4': Max Hollow Rocks"
+          ]
+        },
+        {
+          "type": "endurance",
+          "title": "CrossFit Endurance",
+          "workoutTitle": "AMRAP 38' @ Zone 2",
+          "workoutDetails": [
+            "200m Run",
+            "12 Cal Row",
+            "10 DB Snatch (15/10kg)",
+            "15 Walking Lunges",
+            "10 Cal Ski Erg",
+            "12 KB Goblet Squats (24/16kg)"
+          ]
+        }
+      ]
+    }
+  ]
 }
