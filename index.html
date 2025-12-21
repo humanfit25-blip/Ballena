@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrossFit Vallecas | Semana 22-27 Diciembre 2025</title>
+    <title>CrossFit Vallecas | Programación Semanal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* === VARIABLES MEJORADAS === */
         :root {
             --burdeos: #8B1538;
             --burdeos-glow: #ff2a6d;
@@ -17,48 +16,32 @@
             --negro-suave: #1a1a1a;
             --gris-oscuro: #2a2a2a;
             --verde-haltero: #00ff88;
-            --verde-haltero-glow: #80ffc0;
             --celeste-endurance: #00d4ff;
-            --celeste-endurance-glow: #80eaff;
             --rojo-crossfit: #ff0055;
-            --rojo-crossfit-glow: #ff80aa;
             --texto-principal: #f0f0f0;
             --texto-secundario: #b0b0b0;
             --oro-navidad: #ffd700;
-            --oro-navidad-glow: #ffed80;
-            
-            /* Nuevas variables para efectos */
             --card-border-radius: 20px;
             --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-hard: 0 15px 50px rgba(139, 21, 56, 0.4);
         }
 
-        /* === RESET MEJORADO === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Barlow', sans-serif;
-            background: 
-                radial-gradient(ellipse at top, rgba(139, 21, 56, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
-                linear-gradient(180deg, var(--negro) 0%, var(--negro-suave) 50%, #2a0a14 100%);
+            background: linear-gradient(180deg, var(--negro) 0%, var(--negro-suave) 50%, #2a0a14 100%);
             background-attachment: fixed;
             color: var(--texto-principal);
             line-height: 1.7;
             min-height: 100vh;
             overflow-x: hidden;
+            padding: 20px;
         }
 
-        /* === EFECTO PARTÍCULAS FONDO === */
         .particles {
             position: fixed;
             top: 0;
@@ -84,43 +67,32 @@
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
             }
         }
 
-        /* === CONTENEDOR PRINCIPAL === */
         .container {
             max-width: 1800px;
             margin: 0 auto;
-            padding: 20px;
             position: relative;
             z-index: 2;
         }
 
-        /* === HEADER EPICO === */
         header {
             text-align: center;
             margin: 0 auto 60px;
             padding: 50px 30px;
-            background: 
-                radial-gradient(circle at 30% 30%, rgba(139, 21, 56, 0.2) 0%, transparent 30%),
-                radial-gradient(circle at 70% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 30%),
-                linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(10, 10, 10, 0.8) 100%);
+            background: linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(10, 10, 10, 0.8) 100%);
             border: 2px solid transparent;
             border-radius: var(--card-border-radius);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(12px);
-            box-shadow: var(--shadow-soft), inset 0 0 50px rgba(139, 21, 56, 0.2);
-            transition: var(--transition-smooth);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(139, 21, 56, 0.2);
         }
 
         header::before {
@@ -130,37 +102,12 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--burdeos), 
-                var(--rojo-crossfit), 
-                var(--oro-navidad), 
-                var(--celeste-endurance), 
-                var(--burdeos));
+            background: linear-gradient(45deg, var(--burdeos), var(--rojo-crossfit), var(--oro-navidad), var(--celeste-endurance), var(--burdeos));
             background-size: 400% 400%;
             z-index: -1;
             border-radius: var(--card-border-radius);
             opacity: 0.5;
             animation: gradientShift 8s ease infinite;
-            filter: blur(5px);
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.02) 2px,
-                rgba(255, 255, 255, 0.02) 4px
-            );
-            pointer-events: none;
-            z-index: 1;
-            border-radius: var(--card-border-radius);
         }
 
         @keyframes gradientShift {
@@ -168,7 +115,6 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* === LOGO ANIMADO === */
         .logo {
             width: 100px;
             height: 100px;
@@ -179,34 +125,18 @@
         }
 
         @keyframes floatLogo {
-            0%, 100% { 
-                transform: translateY(0px) rotate(0deg); 
-            }
-            33% { 
-                transform: translateY(-15px) rotate(2deg); 
-            }
-            66% { 
-                transform: translateY(5px) rotate(-2deg); 
-            }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(2deg); }
+            66% { transform: translateY(5px) rotate(-2deg); }
         }
 
-        .logo svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* === TITULO PRINCIPAL === */
         h1 {
             font-family: 'Teko', sans-serif;
             font-size: 5em;
             font-weight: 800;
             letter-spacing: 5px;
             text-transform: uppercase;
-            background: linear-gradient(135deg, 
-                var(--burdeos) 0%, 
-                #ff0055 30%, 
-                #ff2a6d 70%, 
-                #ff0055 100%);
+            background: linear-gradient(135deg, var(--burdeos) 0%, #ff0055 30%, #ff2a6d 70%, #ff0055 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -247,7 +177,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* === LEYENDA MEJORADA === */
         .legend {
             display: flex;
             justify-content: center;
@@ -276,30 +205,16 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .legend-item.haltero:hover { border-color: var(--verde-haltero); }
-        .legend-item.crossfit:hover { border-color: var(--rojo-crossfit); }
-        .legend-item.endurance:hover { border-color: var(--celeste-endurance); }
-
         .legend-bar {
             width: 50px;
             height: 6px;
             border-radius: 3px;
             box-shadow: 0 0 15px currentColor;
-            transition: var(--transition-smooth);
         }
 
-        .legend-bar.haltero { 
-            background: var(--verde-haltero); 
-            box-shadow: 0 0 15px var(--verde-haltero);
-        }
-        .legend-bar.crossfit { 
-            background: var(--rojo-crossfit); 
-            box-shadow: 0 0 15px var(--rojo-crossfit);
-        }
-        .legend-bar.endurance { 
-            background: var(--celeste-endurance); 
-            box-shadow: 0 0 15px var(--celeste-endurance);
-        }
+        .legend-bar.haltero { background: var(--verde-haltero); box-shadow: 0 0 15px var(--verde-haltero); }
+        .legend-bar.crossfit { background: var(--rojo-crossfit); box-shadow: 0 0 15px var(--rojo-crossfit); }
+        .legend-bar.endurance { background: var(--celeste-endurance); box-shadow: 0 0 15px var(--celeste-endurance); }
 
         /* === FILTROS DE CATEGORÍA === */
         .filters {
@@ -349,7 +264,6 @@
             box-shadow: 0 10px 25px rgba(139, 21, 56, 0.5);
         }
 
-        /* === GRID DE SEMANA === */
         .week-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -357,7 +271,6 @@
             margin-bottom: 60px;
         }
 
-        /* === TARJETAS DE DÍA === */
         .day-card {
             background: linear-gradient(145deg, rgba(26, 26, 26, 0.9) 0%, rgba(42, 42, 42, 0.7) 100%);
             border-radius: var(--card-border-radius);
@@ -366,36 +279,12 @@
             transition: var(--transition-smooth);
             animation: fadeInUp 0.6s ease backwards;
             backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .day-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                var(--burdeos), 
-                var(--rojo-crossfit), 
-                var(--burdeos));
-            opacity: 0.7;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .day-card.festivo {
             border: 2px solid var(--oro-navidad);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), var(--shadow-soft);
-        }
-
-        .day-card.festivo::before {
-            background: linear-gradient(90deg, 
-                var(--oro-navidad), 
-                #ffed80, 
-                var(--oro-navidad));
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .day-card:nth-child(1) { animation-delay: 0.1s; }
@@ -419,32 +308,15 @@
         .day-card:hover {
             transform: translateY(-10px) scale(1.02);
             border-color: var(--burdeos);
-            box-shadow: var(--shadow-hard);
+            box-shadow: 0 15px 50px rgba(139, 21, 56, 0.4);
         }
 
-        /* === ENCABEZADO DE DÍA === */
         .day-header {
             background: linear-gradient(135deg, var(--burdeos) 0%, #a0183d 100%);
             padding: 25px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .day-header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
         }
 
         .day-header.festivo {
@@ -494,7 +366,6 @@
             50% { transform: scale(1.05); }
         }
 
-        /* === SECCIONES DE PROGRAMA === */
         .program-section {
             padding: 28px;
             border-left: 6px solid;
@@ -533,7 +404,6 @@
             border-bottom: 1px solid rgba(139, 21, 56, 0.2);
         }
 
-        /* === TÍTULOS DE PROGRAMA === */
         .program-title {
             font-family: 'Teko', sans-serif;
             font-size: 2em;
@@ -545,15 +415,6 @@
             align-items: center;
             gap: 15px;
             position: relative;
-        }
-
-        .program-title::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            box-shadow: 0 0 15px currentColor;
-            flex-shrink: 0;
         }
 
         .program-section.haltero .program-title {
@@ -593,7 +454,6 @@
             margin-top: 10px;
         }
 
-        /* === CONTENIDO DE WORKOUT === */
         .workout-content {
             color: var(--texto-principal);
             line-height: 1.9;
@@ -634,7 +494,6 @@
             border-left-color: var(--burdeos);
         }
 
-        /* === LISTAS DE EJERCICIOS === */
         .exercise-list {
             list-style: none;
             padding: 0;
@@ -671,44 +530,6 @@
             color: var(--rojo-crossfit);
         }
 
-        /* === BADGES ESPECIALES === */
-        .hero-wod, .team-wod, .christmas-wod {
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 20px;
-            border: 2px solid;
-            animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 10px currentColor; }
-            to { box-shadow: 0 0 20px currentColor; }
-        }
-
-        .hero-wod {
-            background: linear-gradient(135deg, rgba(139, 21, 56, 0.3) 0%, rgba(255, 0, 85, 0.2) 100%);
-            border-color: var(--burdeos);
-            color: #ff8090;
-        }
-
-        .team-wod {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 255, 136, 0.2) 100%);
-            border-color: var(--celeste-endurance);
-            color: #80eaff;
-        }
-
-        .christmas-wod {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.4) 0%, rgba(139, 21, 56, 0.3) 100%);
-            border-color: var(--oro-navidad);
-            color: var(--oro-navidad);
-        }
-
-        /* === FOOTER === */
         footer {
             text-align: center;
             padding: 30px;
@@ -727,35 +548,9 @@
             letter-spacing: 2px;
         }
 
-        /* === RESPONSIVE MEJORADO === */
-        @media (max-width: 1200px) {
-            .week-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            }
-        }
-
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 4em;
-            }
-            
-            .legend {
-                gap: 30px;
-            }
-        }
-
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
             h1 {
                 font-size: 3em;
-                letter-spacing: 3px;
-            }
-            
-            .subtitle {
-                font-size: 1.2em;
             }
             
             .week-grid {
@@ -770,12 +565,14 @@
             }
             
             .filters {
-                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
             
             .filter-btn {
-                padding: 10px 20px;
-                font-size: 1.1em;
+                width: 90%;
+                max-width: 300px;
             }
             
             .day-name {
@@ -816,18 +613,6 @@
                 font-size: 1.7em;
             }
         }
-
-        /* === CLASES PARA FILTROS JS === */
-        .day-card.hidden {
-            opacity: 0.3;
-            transform: scale(0.95);
-            pointer-events: none;
-        }
-
-        .program-section.hidden {
-            opacity: 0.3;
-            transform: translateX(-10px);
-        }
     </style>
 </head>
 <body>
@@ -838,12 +623,10 @@
         <header>
             <div class="logo">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Estrella mejorada -->
                     <path d="M50 10 L60 40 L90 40 L67 57 L77 87 L50 70 L23 87 L33 57 L10 40 L40 40 Z" 
                           fill="#ff0055" stroke="#ff2a6d" stroke-width="2.5">
                         <animate attributeName="fill" values="#ff0055;#ff2a6d;#ff0055" dur="3s" repeatCount="indefinite" />
                     </path>
-                    <!-- Cráneo mejorado -->
                     <ellipse cx="50" cy="50" rx="18" ry="20" fill="#1a1a1a" stroke="#ffffff" stroke-width="2"/>
                     <circle cx="43" cy="48" r="3.5" fill="#ffffff">
                         <animate attributeName="r" values="3.5;4;3.5" dur="2s" repeatCount="indefinite" />
@@ -852,14 +635,12 @@
                         <animate attributeName="r" values="3.5;4;3.5" dur="2s" repeatCount="indefinite" />
                     </circle>
                     <path d="M45 60 Q50 63 55 60" stroke="#ffffff" stroke-width="2" fill="none"/>
-                    <!-- Cuernos mejorados -->
                     <path d="M50 28 L48 35 L50 30 L52 35 Z" fill="#ffffff" stroke="#ff2a6d" stroke-width="1">
                         <animateTransform attributeName="transform" type="rotate" values="0 50 30;5 50 30;0 50 30" dur="4s" repeatCount="indefinite" />
                     </path>
                     <path d="M50 72 L48 65 L50 70 L52 65 Z" fill="#ffffff" stroke="#ff2a6d" stroke-width="1">
                         <animateTransform attributeName="transform" type="rotate" values="0 50 70;-5 50 70;0 50 70" dur="4s" repeatCount="indefinite" />
                     </path>
-                    <!-- Anillo exterior -->
                     <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(139,21,56,0.5)" stroke-width="1" stroke-dasharray="5,3">
                         <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="20s" repeatCount="indefinite" />
                     </circle>
@@ -870,33 +651,32 @@
             <p class="week-dates">22 - 27 DICIEMBRE 2025</p>
 
             <div class="legend">
-                <div class="legend-item haltero">
+                <div class="legend-item">
                     <div class="legend-bar haltero"></div>
                     <span>HALTEROFILIA</span>
                 </div>
-                <div class="legend-item crossfit">
+                <div class="legend-item">
                     <div class="legend-bar crossfit"></div>
                     <span>CROSSFIT</span>
                 </div>
-                <div class="legend-item endurance">
+                <div class="legend-item">
                     <div class="legend-bar endurance"></div>
                     <span>ENDURANCE</span>
                 </div>
             </div>
         </header>
 
-        <!-- Filtros de categoría -->
+        <!-- FILTROS DE CATEGORÍA -->
         <div class="filters">
             <button class="filter-btn active" data-filter="all">Todos los días</button>
             <button class="filter-btn" data-filter="haltero">Solo Halterofilia</button>
             <button class="filter-btn" data-filter="crossfit">Solo CrossFit</button>
             <button class="filter-btn" data-filter="endurance">Solo Endurance</button>
-            <button class="filter-btn" data-filter="festivo">Días Festivos</button>
         </div>
 
         <div class="week-grid">
             <!-- LUNES 22/12 -->
-            <div class="day-card" data-categories="haltero crossfit endurance">
+            <div class="day-card">
                 <div class="day-header">
                     <div class="day-name">Lunes</div>
                     <div class="day-date">22/12/2025</div>
@@ -952,7 +732,7 @@
             </div>
 
             <!-- MARTES 23/12 -->
-            <div class="day-card" data-categories="haltero crossfit endurance">
+            <div class="day-card">
                 <div class="day-header">
                     <div class="day-name">Martes</div>
                     <div class="day-date">23/12/2025</div>
@@ -972,11 +752,326 @@
                 <div class="program-section crossfit">
                     <div class="program-title">CrossFit</div>
                     <div class="workout-content">
-                        <div class="team-wod">👥 TEAM OF 4</div>
-                        <div class="workout-title">AMRAP 30'</div>
+                        <div class="workout-title">AMRAP 30' (Team of 4)</div>
                         <div class="workout-details">
                             <strong>Run 400 mts Together</strong><br><br>
                             <strong>Teammate A:</strong> 25 Deadlift (60kg/40kg)<br>
                             <strong>Teammate B:</strong> 20 Burpee Pull-Ups<br>
                             <strong>Teammate C:</strong> Max Hang C&J (60/40)<br>
-                            <strong>Teammate
+                            <strong>Teammate D:</strong> Max Pinch Grip Carry<br><br>
+                            <strong>Rest 60" each round</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-section endurance">
+                    <div class="program-title">Endurance</div>
+                    <div class="workout-content">
+                        <div class="workout-title">6 Rounds</div>
+                        <div class="workout-details">
+                            15/12 Calories<br>
+                            15 American Swings<br>
+                            50 Double-Unders<br>
+                            15 Burpees Box Jumps
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIÉRCOLES 24/12 - NOCHEBUENA -->
+            <div class="day-card festivo">
+                <div class="day-header festivo">
+                    <div class="day-name">Miércoles</div>
+                    <div class="day-date">24/12/2025</div>
+                    <div class="festivo-badge">🎄 NOCHEBUENA 🎄</div>
+                </div>
+
+                <div class="program-section haltero festivo">
+                    <div class="festivo-icon">🎁</div>
+                    <div class="program-title">FESTIVO</div>
+                    <div class="festivo-text">No hay Halterofilia</div>
+                </div>
+
+                <div class="program-section crossfit">
+                    <div class="program-title">CrossFit</div>
+                    <div class="workout-content">
+                        <div class="workout-title">"12 DAYS OF CHRISTMAS"</div>
+                        <div class="workout-details">
+                            <strong>For Time</strong><br>
+                            1 Muscle-Up<br>
+                            2 Power Snatches<br>
+                            3 Overhead Squats<br>
+                            4 Bar Facing Burpees<br>
+                            5 Box Jumps<br>
+                            6 Strict Handstand Push-Ups<br>
+                            7 Toes-to-Bars<br>
+                            8 Hang DB Cleans<br>
+                            9 Ring Dips<br>
+                            10 GHD Sit-Ups<br>
+                            11 Pull-Ups<br>
+                            12(00) meter Row
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-section endurance">
+                    <div class="program-title">Endurance</div>
+                    <div class="workout-content">
+                        <div class="workout-title">AMRAP 30'</div>
+                        <div class="workout-details">
+                            800 mts Run<br>
+                            50 Double-Unders<br>
+                            40 Dumbbell Snatches<br>
+                            30 Burpees<br>
+                            20 Shuttle Run<br>
+                            10 Devil Press
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUEVES 25/12 - NAVIDAD -->
+            <div class="day-card festivo">
+                <div class="day-header festivo">
+                    <div class="day-name">Jueves</div>
+                    <div class="day-date">25/12/2025</div>
+                    <div class="festivo-badge">🎅 NAVIDAD 🎅</div>
+                </div>
+
+                <div class="program-section haltero festivo">
+                    <div class="festivo-icon">🎄</div>
+                    <div class="program-title">FESTIVO</div>
+                    <div class="festivo-text">¡Feliz Navidad!</div>
+                </div>
+
+                <div class="program-section crossfit festivo">
+                    <div class="festivo-icon">🎁</div>
+                    <div class="program-title">FESTIVO</div>
+                    <div class="festivo-text">¡Disfruta con tu familia!</div>
+                </div>
+
+                <div class="program-section endurance festivo">
+                    <div class="festivo-icon">⛄</div>
+                    <div class="program-title">FESTIVO</div>
+                    <div class="festivo-text">Descansa y celebra</div>
+                </div>
+            </div>
+
+            <!-- VIERNES 26/12 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-name">Viernes</div>
+                    <div class="day-date">26/12/2025</div>
+                </div>
+
+                <div class="program-section haltero">
+                    <div class="program-title">Halterofilia</div>
+                    <div class="workout-content">
+                        <ul class="exercise-list">
+                            <li>Back Squats</li>
+                            <li>Cluster</li>
+                            <li>Power Clean</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-section crossfit">
+                    <div class="program-title">CrossFit</div>
+                    <div class="workout-content">
+                        <div class="workout-title">"SCHMALLS" - HERO WOD</div>
+                        <div class="workout-details">
+                            <strong>For Time</strong><br>
+                            800 meter Run<br><br>
+                            <strong>Then 2 Rounds of:</strong><br>
+                            50 Burpees<br>
+                            40 Pull-Ups<br>
+                            30 Pistols<br>
+                            20 Kettlebell Swings (1.5/1 pood)<br>
+                            10 Handstand Push-Ups<br><br>
+                            <strong>Then 800 mts Run</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-section endurance">
+                    <div class="program-title">Endurance</div>
+                    <div class="workout-content">
+                        <div class="workout-title">AMRAP 36'</div>
+                        <div class="workout-details">
+                            365 Double-Unders<br>
+                            <strong>On the minute: 5 Push-Ups</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SÁBADO 27/12 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-name">Sábado</div>
+                    <div class="day-date">27/12/2025</div>
+                </div>
+
+                <div class="program-section haltero">
+                    <div class="program-title">Halterofilia</div>
+                    <div class="workout-content">
+                        <ul class="exercise-list">
+                            <li>Power Snatch</li>
+                            <li>Snatch Balance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-section crossfit">
+                    <div class="program-title">CrossFit</div>
+                    <div class="workout-content">
+                        <div class="workout-title">10 Rounds (cap 15')</div>
+                        <div class="workout-details">
+                            1 Dumbbell DT<br>
+                            12 Toes to Bar
+                        </div>
+
+                        <div class="workout-title">Rest 2'</div>
+
+                        <div class="workout-title">10 Rounds (cap 15')</div>
+                        <div class="workout-details">
+                            10 Cal Bike<br>
+                            12 Front Squats (60kg/40kg)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-section endurance">
+                    <div class="program-title">Endurance</div>
+                    <div class="workout-content">
+                        <div class="workout-title">For Time (IN PAIRS)</div>
+                        <div class="workout-details">
+                            <strong>5 Rounds</strong><br>
+                            <strong>Teammate A:</strong> 200 mts Run<br>
+                            <strong>Teammate B:</strong> Max Kettlebell Step-Ups<br><br>
+
+                            <strong>Rest 2'</strong><br><br>
+
+                            <strong>5 Rounds</strong><br>
+                            <strong>Teammate A:</strong> 100 Double-Unders<br>
+                            <strong>Teammate B:</strong> Max Complex<br>
+                            8 Russian Swings<br>
+                            8 Goblet Squats
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>CrossFit Vallecas © 2025 - Entrena con pasión, vive con intensidad</p>
+            <p class="coach-signature">COACHES: Alex, María, Carlos & Laura</p>
+            <p style="margin-top: 15px; font-size: 0.8em; opacity: 0.7;">
+                Programación actualizada: <span id="update-date">22/12/2025 09:00</span>
+            </p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT FUNCIONAL -->
+    <script>
+        // ============================================
+        // CÓDIGO FUNCIONAL - FILTROS Y ANIMACIONES
+        // ============================================
+
+        // 1. Crear partículas de fondo
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                particle.style.animationDuration = `${15 + Math.random() * 20}s`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // 2. Configurar el sistema de filtros
+        function setupFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const dayCards = document.querySelectorAll('.day-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remover 'active' de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Agregar 'active' al botón clickeado
+                    this.classList.add('active');
+                    
+                    const filterType = this.dataset.filter;
+                    
+                    // Aplicar filtro a cada tarjeta
+                    dayCards.forEach(card => {
+                        if (filterType === 'all') {
+                            // Mostrar todas las tarjetas
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                            card.style.pointerEvents = 'auto';
+                        } else {
+                            // Para filtros específicos (haltero, crossfit, endurance)
+                            const hasSection = card.querySelector(`.program-section.${filterType}`);
+                            if (hasSection) {
+                                // Mostrar esta tarjeta
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                                card.style.pointerEvents = 'auto';
+                            } else {
+                                // Ocultar esta tarjeta
+                                card.style.opacity = '0.3';
+                                card.style.transform = 'scale(0.95)';
+                                card.style.pointerEvents = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            console.log('✅ Filtros configurados correctamente');
+        }
+
+        // 3. Inicializar todo cuando la página cargue
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Inicializando página...');
+            
+            // Crear partículas
+            createParticles();
+            
+            // Configurar filtros
+            setupFilters();
+            
+            // Efecto de entrada suave
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+                console.log('✨ Página lista');
+            }, 100);
+        });
+
+        // 4. Actualizar la fecha automáticamente
+        function updateDate() {
+            const now = new Date();
+            const options = { 
+                day: '2-digit', 
+                month: '2-digit', 
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            document.getElementById('update-date').textContent = 
+                now.toLocaleDateString('es-ES', options);
+        }
+        
+        // Actualizar fecha al cargar
+        updateDate();
+        // Actualizar cada minuto (opcional)
+        setInterval(updateDate, 60000);
+
+    </script>
+</body>
+</html>
