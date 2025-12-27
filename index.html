@@ -3,295 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planificación Semanal CrossFit Vallecas - Semana 2</title>
+    <title>CrossFit Vallegas - Programación Semanal 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #e63946;
-            --secondary-color: #1d3557;
-            --accent-color: #a8dadc;
-            --light-color: #f1faee;
-            --dark-color: #457b9d;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-        }
-        
-        .container {
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
         
-        header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
-            color: white;
-            padding: 25px 0;
+        .header {
             text-align: center;
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e63946;
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .logo {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 15px;
-        }
-        
-        header h1 i {
-            color: var(--primary-color);
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .week-navigation {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            background-color: white;
-            padding: 15px 20px;
-            border-radius: var(--border-radius);
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .logo .crossfit {
+            color: #e63946;
+            font-weight: 800;
+        }
+        
+        .logo .vallegas {
+            color: #ffffff;
+            font-weight: 300;
+        }
+        
+        .week-info {
+            margin-top: 15px;
         }
         
         .week-title {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--secondary-color);
+            color: #e63946;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
         
-        .days-container {
+        .week-dates {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+        
+        .programs-header {
             display: flex;
-            gap: 10px;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
         
-        .day-btn {
-            padding: 10px 15px;
-            border: 2px solid transparent;
-            background-color: #e9ecef;
-            border-radius: var(--border-radius);
-            cursor: pointer;
+        .program-pill {
+            background-color: #1a1a1a;
+            padding: 8px 20px;
+            border-radius: 20px;
             font-weight: 600;
-            transition: all 0.3s;
-            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
-        .day-btn:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-2px);
+        .program-pill.halterofilia {
+            color: #ff9e00;
         }
         
-        .day-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
+        .program-pill.endurance {
+            color: #4dabf7;
         }
         
-        .today-btn {
-            padding: 10px 20px;
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+        .program-pill.crossfit {
+            color: #e63946;
         }
         
-        .today-btn:hover {
-            background-color: var(--dark-color);
-            transform: translateY(-2px);
+        .day-container {
+            margin-bottom: 60px;
+            background-color: #111111;
+            border-radius: 10px;
+            padding: 30px;
+            border-left: 4px solid #e63946;
         }
         
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-        
-        .day-content {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        
-        .day-content.active {
-            display: block;
-        }
-        
-        .date-header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 15px 20px;
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        .day-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
         }
         
-        .date-header h2 {
+        .day-name {
             font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            text-transform: uppercase;
+            color: #e63946;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
-        .programs-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+        .day-date {
+            font-size: 1.2rem;
+            color: #cccccc;
         }
         
-        .program-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: transform 0.3s;
+        .program-section {
+            margin-bottom: 40px;
         }
         
-        .program-card:hover {
-            transform: translateY(-5px);
+        .program-section:last-child {
+            margin-bottom: 0;
         }
         
-        .program-header {
-            padding: 15px 20px;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .crossfit-header {
-            background-color: var(--primary-color);
-        }
-        
-        .endurance-header {
-            background-color: var(--dark-color);
-        }
-        
-        .weightlifting-header {
-            background-color: #e76f51;
-        }
-        
-        .program-content {
-            padding: 20px;
-        }
-        
-        .program-content h4 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .exercise-block {
+        .program-title {
+            font-size: 1.4rem;
+            color: #ffffff;
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .exercise-title {
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .program-title.halterofilia {
+            border-bottom-color: #ff9e00;
         }
         
-        .exercise-details {
-            padding-left: 20px;
-            color: #555;
+        .program-title.endurance {
+            border-bottom-color: #4dabf7;
         }
         
-        .exercise-details ul {
+        .program-title.crossfit {
+            border-bottom-color: #e63946;
+        }
+        
+        .exercise-part {
+            margin-bottom: 25px;
+        }
+        
+        .part-title {
+            font-size: 1.2rem;
+            color: #e63946;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .exercise-description {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid #333;
+        }
+        
+        .exercise-description p {
+            margin-bottom: 10px;
+        }
+        
+        .exercise-list {
             list-style-type: none;
-        }
-        
-        .exercise-details li {
-            margin-bottom: 5px;
-            position: relative;
             padding-left: 20px;
         }
         
-        .exercise-details li:before {
+        .exercise-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .exercise-list li:before {
             content: "•";
-            color: var(--primary-color);
+            color: #e63946;
             font-weight: bold;
             position: absolute;
             left: 0;
         }
         
-        .scale {
-            font-style: italic;
-            color: #666;
-            margin-top: 5px;
+        .exercise-list ul {
+            list-style-type: none;
             padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .exercise-list ul li:before {
+            content: "◦";
+            color: #ff9e00;
+        }
+        
+        .scale-note {
+            font-style: italic;
+            color: #999;
             font-size: 0.95rem;
+            margin-top: 5px;
         }
         
-        .notes {
-            background-color: #fff9e6;
-            border-left: 4px solid #ffc107;
+        .separator {
+            height: 1px;
+            background-color: #333;
+            margin: 30px 0;
+            width: 100%;
+        }
+        
+        .feedback-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #444;
+        }
+        
+        .feedback-title {
+            font-size: 1.3rem;
+            color: #ff9e00;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .feedback-content {
+            background-color: #1a1a1a;
             padding: 20px;
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
-            margin-top: 25px;
+            border-radius: 8px;
+            border-left: 3px solid #ff9e00;
         }
         
-        .notes h4 {
-            color: var(--secondary-color);
+        .feedback-content p {
             margin-bottom: 10px;
+        }
+        
+        .day-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-btn {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .notes-content {
-            color: #555;
-            line-height: 1.7;
+        .nav-btn:hover {
+            background-color: #e63946;
+            transform: translateY(-2px);
         }
         
-        .notes-content p {
-            margin-bottom: 10px;
+        .today-btn {
+            background-color: #333;
+            color: #f0f0f0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0 auto;
+            display: block;
+            transition: all 0.3s;
         }
         
-        .notes-content ul {
-            padding-left: 20px;
-            margin-bottom: 10px;
+        .today-btn:hover {
+            background-color: #4dabf7;
         }
         
-        .notes-content li {
-            margin-bottom: 5px;
+        .day-content {
+            display: none;
         }
         
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-            border-top: 1px solid #eee;
+        .day-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
         }
         
         @keyframes fadeIn {
@@ -299,723 +312,704 @@
             to { opacity: 1; }
         }
         
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
-            .week-navigation {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-            
-            .days-container {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .programs-container {
-                grid-template-columns: 1fr;
-            }
-            
-            header h1 {
+            .logo h1 {
                 font-size: 2rem;
+            }
+            
+            .programs-header {
+                gap: 15px;
+            }
+            
+            .program-pill {
+                font-size: 0.8rem;
+                padding: 6px 15px;
+            }
+            
+            .day-container {
+                padding: 20px;
+            }
+            
+            .day-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1><i class="fas fa-dumbbell"></i> Planificación Semanal CrossFit Vallecas</h1>
-            <p>Entrenamientos diseñados para optimizar tu rendimiento</p>
-        </header>
-        
-        <div class="week-navigation">
-            <div class="week-title">SEMANA 2 - ENERO 2026</div>
-            <div class="days-container">
-                <button class="day-btn active" data-day="mon">LUNES</button>
-                <button class="day-btn" data-day="tue">MARTES</button>
-                <button class="day-btn" data-day="wed">MIÉRCOLES</button>
-                <button class="day-btn" data-day="thu">JUEVES</button>
-                <button class="day-btn" data-day="fri">VIERNES</button>
-                <button class="day-btn" data-day="sat">SÁBADO</button>
-            </div>
-            <button class="today-btn" id="today-btn">HOY</button>
+    <div class="header">
+        <div class="logo">
+            <h1><span class="crossfit">CROSSFIT</span> <span class="vallegas">VALLEGAS</span></h1>
         </div>
-        
-        <div class="content">
-            <!-- LUNES -->
-            <div class="day-content active" id="day-mon">
-                <div class="date-header">
-                    <h2><i class="far fa-calendar-alt"></i> LUNES 12/01/2026</h2>
-                </div>
+        <div class="week-info">
+            <div class="week-title">Programación Semanal 2</div>
+            <div class="week-dates">12 Enero 2026 - 18 Enero 2026</div>
+        </div>
+        <div class="programs-header">
+            <div class="program-pill halterofilia">HALTEROFILIA</div>
+            <div class="program-pill endurance">ENDURANCE</div>
+            <div class="program-pill crossfit">CROSSFIT</div>
+        </div>
+    </div>
+    
+    <div class="day-navigation">
+        <button class="nav-btn" id="prev-day"><i class="fas fa-chevron-left"></i> ANTERIOR</button>
+        <button class="today-btn" id="today-btn">HOY</button>
+        <button class="nav-btn" id="next-day">SIGUIENTE <i class="fas fa-chevron-right"></i></button>
+    </div>
+    
+    <!-- LUNES -->
+    <div class="day-content active" id="day-mon">
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-name">Lunes</div>
+                <div class="day-date">12/01/2026</div>
+            </div>
+            
+            <!-- Halterofilia -->
+            <div class="program-section">
+                <div class="program-title halterofilia">Halterofilia</div>
                 
-                <div class="programs-container">
-                    <!-- CrossFit -->
-                    <div class="program-card">
-                        <div class="program-header crossfit-header">
-                            <i class="fas fa-fire-alt"></i>
-                            <h3>PROGRAM: CROSSFIT</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Skill & Core (Density)</div>
-                                <div class="exercise-details">
-                                    <p><strong>EMOM 16 Minutes:</strong></p>
-                                    <ul>
-                                        <li><strong>Min 1:</strong> 40ft Handstand Walk <span class="scale">(Scale: 3 Wall Walks / 40ft Bear Crawl)</span></li>
-                                        <li><strong>Min 2:</strong> 15/12 Calorie BikeErg (Moderate Pace)</li>
-                                        <li><strong>Min 3:</strong> 12 Toes-to-Bar <span class="scale">(Scale: 12 Knee Raises)</span></li>
-                                        <li><strong>Min 4:</strong> Rest</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Metcon</div>
-                                <div class="exercise-details">
-                                    <p><strong>3 Rounds For Time (Time Cap: 12')</strong></p>
-                                    <ul>
-                                        <li>400m Run</li>
-                                        <li>21 Kettlebell Swings (24/16 kg) - American</li>
-                                        <li>12 Box Jump Overs (24"/20")</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Endurance -->
-                    <div class="program-card">
-                        <div class="program-header endurance-header">
-                            <i class="fas fa-running"></i>
-                            <h3>PROGRAM: ENDURANCE</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Format: EMOM 40' (The Long Grind)</div>
-                                <div class="exercise-details">
-                                    <ul>
-                                        <li><strong>Min 1:</strong> 15/12 Cal Row</li>
-                                        <li><strong>Min 2:</strong> 40 seconds Plank Hold (Weighted if possible)</li>
-                                        <li><strong>Min 3:</strong> 15/12 Cal Ski Erg</li>
-                                        <li><strong>Min 4:</strong> 20 Walking Lunges (Bodyweight)</li>
-                                        <li><strong>Min 5:</strong> Rest</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Weightlifting -->
-                    <div class="program-card">
-                        <div class="program-header weightlifting-header">
-                            <i class="fas fa-weight-hanging"></i>
-                            <h3>PROGRAM: WEIGHTLIFTING</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Snatch Technique</div>
-                                <div class="exercise-details">
-                                    <p><strong>Every 90 seconds for 10 Sets:</strong></p>
-                                    <ul>
-                                        <li>1 Muscle Snatch</li>
-                                        <li>1 Overhead Squat (2 sec pause in bottom)</li>
-                                    </ul>
-                                    <p class="scale">Load: light/moderate. Focus on lockout and balance.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Pull Strength</div>
-                                <div class="exercise-details">
-                                    <p><strong>4 Sets x 4 Reps:</strong></p>
-                                    <ul>
-                                        <li>Snatch High Pull (90-100% 1RM Snatch) - Elbows high.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <div class="exercise-part">
+                    <div class="part-title">A) Snatch Technique</div>
+                    <div class="exercise-description">
+                        <p><strong>Every 90 seconds for 10 Sets:</strong></p>
+                        <ul class="exercise-list">
+                            <li>1 Muscle Snatch</li>
+                            <li>1 Overhead Squat (2 sec pause in bottom)</li>
+                        </ul>
+                        <p class="scale-note">Load: light/moderate. Focus on lockout and balance.</p>
                     </div>
                 </div>
                 
-                <div class="notes">
-                    <h4><i class="fas fa-clipboard-list"></i> NOTAS DEL HEAD COACH (LUNES)</h4>
-                    <div class="notes-content">
-                        <p><strong>CF:</strong> Venimos de un lunes de Snatch la semana pasada. Hoy cambiamos radicalmente a Gimnasia y Cardio. El EMOM A es para fatigar el core y los hombros sin impacto. El Metcon B es un sprint clásico de 12 minutos.</p>
-                        <p><strong>Endurance:</strong> Cero impacto articular alto. Mucho remo y ski para proteger las rodillas de los saltos de la clase de CrossFit. Volumen alto, intensidad zona 2/3.</p>
-                        <p><strong>Haltero:</strong> Muscle Snatch para corregir la trayectoria de la barra (evitar el "caderazo"). La pausa en OHS es obligatoria para la estabilidad.</p>
+                <div class="exercise-part">
+                    <div class="part-title">B) Pull Strength</div>
+                    <div class="exercise-description">
+                        <p><strong>4 Sets x 4 Reps:</strong></p>
+                        <ul class="exercise-list">
+                            <li>Snatch High Pull (90-100% 1RM Snatch) - Elbows high.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- MARTES -->
-            <div class="day-content" id="day-tue">
-                <div class="date-header">
-                    <h2><i class="far fa-calendar-alt"></i> MARTES 14/01/2026</h2>
-                </div>
+            <div class="separator"></div>
+            
+            <!-- Endurance -->
+            <div class="program-section">
+                <div class="program-title endurance">Endurance</div>
                 
-                <div class="programs-container">
-                    <!-- CrossFit -->
-                    <div class="program-card">
-                        <div class="program-header crossfit-header">
-                            <i class="fas fa-fire-alt"></i>
-                            <h3>PROGRAM: CROSSFIT</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Strength (Strict Power)</div>
-                                <div class="exercise-details">
-                                    <p><strong>Every 2 Minutes for 10 Minutes (5 Sets):</strong></p>
-                                    <ul>
-                                        <li>5 Strict Press (Barbell)</li>
-                                    </ul>
-                                    <p class="scale">Ascending weight. No leg drive.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Metcon</div>
-                                <div class="exercise-details">
-                                    <p><strong>AMRAP 14 Minutes:</strong></p>
-                                    <ul>
-                                        <li>10 Dumbbell Hang Clean & Jerk (22.5/15 kg) - Alternating Arms (5/5)</li>
-                                        <li>15 Push-Ups (Hand Release)</li>
-                                        <li>30 Double Unders <span class="scale">(Scale: 50 Single Unders)</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Endurance -->
-                    <div class="program-card">
-                        <div class="program-header endurance-header">
-                            <i class="fas fa-running"></i>
-                            <h3>PROGRAM: ENDURANCE</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Format: Interval Ladders</div>
-                                <div class="exercise-details">
-                                    <p><strong>5 Sets of:</strong></p>
-                                    <ul>
-                                        <li>3 Minutes Work / 90 Seconds Rest</li>
-                                        <li>Buy-in: 250m Row</li>
-                                        <li>Max Rounds in remaining time:
-                                            <ul>
-                                                <li>10 Air Squats</li>
-                                                <li>5 Burpees</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <p class="scale">Score is total rounds of Squats/Burpees.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Weightlifting -->
-                    <div class="program-card">
-                        <div class="program-header weightlifting-header">
-                            <i class="fas fa-weight-hanging"></i>
-                            <h3>PROGRAM: WEIGHTLIFTING</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Clean & Jerk Power</div>
-                                <div class="exercise-details">
-                                    <p><strong>EMOM 12 Minutes:</strong></p>
-                                    <ul>
-                                        <li><strong>Odd:</strong> 2 Power Cleans (Touch & Go)</li>
-                                        <li><strong>Even:</strong> 2 Push Jerks (From Rack)</li>
-                                    </ul>
-                                    <p class="scale">Load: 70-75%. Focus on speed and cycling.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Front Squat</div>
-                                <div class="exercise-details">
-                                    <p><strong>3 Sets x 5 Reps:</strong></p>
-                                    <ul>
-                                        <li>Tempo 30X1 (3s down, 0s pause, explode up, 1s hold). 65-70%.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="notes">
-                    <h4><i class="fas fa-clipboard-list"></i> NOTAS DEL HEAD COACH (MARTES)</h4>
-                    <div class="notes-content">
-                        <p><strong>CF:</strong> La semana pasada tuvimos Deadlift pesado. Hoy cambiamos a Press Estricto para fuerza de hombro pura. El WOD es de densidad media: hombros y pulmones. Cuidado con los DUs bajo fatiga de hombros.</p>
-                        <p><strong>Endurance:</strong> Intervalos de trabajo/descanso (2:1). El remo es solo el "peaje" para empezar a trabajar. Intensidad alta en los burpees.</p>
-                        <p><strong>Haltero:</strong> Separamos el Clean del Jerk en el EMOM para poder meter más kilos en el Jerk sin la fatiga del Clean previo.</p>
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Format: EMOM 40' (The Long Grind)</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Min 1:</strong> 15/12 Cal Row</li>
+                            <li><strong>Min 2:</strong> 40 seconds Plank Hold (Weighted if possible)</li>
+                            <li><strong>Min 3:</strong> 15/12 Cal Ski Erg</li>
+                            <li><strong>Min 4:</strong> 20 Walking Lunges (Bodyweight)</li>
+                            <li><strong>Min 5:</strong> Rest</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- MIÉRCOLES -->
-            <div class="day-content" id="day-wed">
-                <div class="date-header">
-                    <h2><i class="far fa-calendar-alt"></i> MIÉRCOLES 15/01/2026</h2>
-                </div>
+            <div class="separator"></div>
+            
+            <!-- CrossFit -->
+            <div class="program-section">
+                <div class="program-title crossfit">CrossFit</div>
                 
-                <div class="programs-container">
-                    <!-- CrossFit -->
-                    <div class="program-card">
-                        <div class="program-header crossfit-header">
-                            <i class="fas fa-fire-alt"></i>
-                            <h3>PROGRAM: CROSSFIT</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Strength (Absolute Load)</div>
-                                <div class="exercise-details">
-                                    <p><strong>Every 2:30 for 12:30 (5 Sets):</strong></p>
-                                    <ul>
-                                        <li>3 Back Squats</li>
-                                    </ul>
-                                    <p class="scale">Load: 75-80% (Heavy but no failure). RPE 8/10.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Metcon</div>
-                                <div class="exercise-details">
-                                    <p><strong>For Time (Cap 10') - "Legs Gone"</strong></p>
-                                    <p><strong>21 - 15 - 9</strong></p>
-                                    <ul>
-                                        <li>Deadlift (100/70 kg)</li>
-                                        <li>Bar Facing Burpees</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Endurance -->
-                    <div class="program-card">
-                        <div class="program-header endurance-header">
-                            <i class="fas fa-running"></i>
-                            <h3>PROGRAM: ENDURANCE</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Format: EMOM 36' (Mixed Modality)</div>
-                                <div class="exercise-details">
-                                    <ul>
-                                        <li><strong>Min 1:</strong> 15/12 Cal BikeErg (Sprint)</li>
-                                        <li><strong>Min 2:</strong> 16 Kettlebell Swings (24/16 kg) - Russian</li>
-                                        <li><strong>Min 3:</strong> 12 Box Jumps (Step down allowed)</li>
-                                        <li><strong>Min 4:</strong> 40m Shuttle Run (4x10m)</li>
-                                        <li><strong>Min 5:</strong> Rest</li>
-                                        <li><strong>Min 6:</strong> Rest</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Weightlifting -->
-                    <div class="program-card">
-                        <div class="program-header weightlifting-header">
-                            <i class="fas fa-weight-hanging"></i>
-                            <h3>PROGRAM: WEIGHTLIFTING</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Snatch Positions</div>
-                                <div class="exercise-details">
-                                    <p><strong>5 Sets:</strong></p>
-                                    <ul>
-                                        <li>1 Hang Snatch (Above Knee) + 1 Hang Snatch (Below Knee)</li>
-                                    </ul>
-                                    <p class="scale">Focus: Pulling under the bar quickly. 65-75%.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Pull Strength</div>
-                                <div class="exercise-details">
-                                    <p><strong>4 Sets x 3 Reps:</strong></p>
-                                    <ul>
-                                        <li>Snatch Deadlift (Controlled eccentric). 100-110%.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <div class="exercise-part">
+                    <div class="part-title">A) Skill & Core (Density)</div>
+                    <div class="exercise-description">
+                        <p><strong>EMOM 16 Minutes:</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Min 1:</strong> 40ft Handstand Walk <span class="scale-note">(Scale: 3 Wall Walks / 40ft Bear Crawl)</span></li>
+                            <li><strong>Min 2:</strong> 15/12 Calorie BikeErg (Moderate Pace)</li>
+                            <li><strong>Min 3:</strong> 12 Toes-to-Bar <span class="scale-note">(Scale: 12 Knee Raises)</span></li>
+                            <li><strong>Min 4:</strong> Rest</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="notes">
-                    <h4><i class="fas fa-clipboard-list"></i> NOTAS DEL HEAD COACH (MIÉRCOLES)</h4>
-                    <div class="notes-content">
-                        <p><strong>CF:</strong> Día pesado de pierna y espalda. El 21-15-9 es corto y doloroso. Si 100kg es mucho, escalar al 60% del 1RM de Peso Muerto. El objetivo es intensidad máxima, < 7 minutos.</p>
-                        <p><strong>Endurance:</strong> Ciclos de 6 minutos con doble descanso al final. Eso significa que los minutos de trabajo (1-4) deben ser a intensidad muy alta.</p>
-                        <p><strong>Haltero:</strong> Trabajo de posiciones colgantes para mejorar la velocidad de entrada.</p>
+                <div class="exercise-part">
+                    <div class="part-title">B) Metcon</div>
+                    <div class="exercise-description">
+                        <p><strong>3 Rounds For Time (Time Cap: 12')</strong></p>
+                        <ul class="exercise-list">
+                            <li>400m Run</li>
+                            <li>21 Kettlebell Swings (24/16 kg) - American</li>
+                            <li>12 Box Jump Overs (24"/20")</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- JUEVES -->
-            <div class="day-content" id="day-thu">
-                <div class="date-header">
-                    <h2><i class="far fa-calendar-alt"></i> JUEVES 16/01/2026</h2>
-                </div>
-                
-                <div class="programs-container">
-                    <!-- CrossFit -->
-                    <div class="program-card">
-                        <div class="program-header crossfit-header">
-                            <i class="fas fa-fire-alt"></i>
-                            <h3>PROGRAM: CROSSFIT</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Skill / Activation</div>
-                                <div class="exercise-details">
-                                    <p><strong>3 Rounds Not For Time:</strong></p>
-                                    <ul>
-                                        <li>10 Ring Rows</li>
-                                        <li>10 Hollow Rocks</li>
-                                        <li>20s L-Sit Hold (Parallettes or Box)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Metcon</div>
-                                <div class="exercise-details">
-                                    <p><strong>EMOM 24 Minutes (Aerobic Capacity):</strong></p>
-                                    <ul>
-                                        <li><strong>Min 1:</strong> 15 Wall Balls (9/6 kg)</li>
-                                        <li><strong>Min 2:</strong> 12/10 Cal Row</li>
-                                        <li><strong>Min 3:</strong> 10 Burpees to Target</li>
-                                        <li><strong>Min 4:</strong> Rest</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Endurance -->
-                    <div class="program-card">
-                        <div class="program-header endurance-header">
-                            <i class="fas fa-running"></i>
-                            <h3>PROGRAM: ENDURANCE</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Format: Long Distance Intervals</div>
-                                <div class="exercise-details">
-                                    <p><strong>3 Sets:</strong></p>
-                                    <ul>
-                                        <li>1000m BikeErg or 500m Row</li>
-                                        <li>50 Air Squats</li>
-                                        <li>25 Push-ups</li>
-                                        <li>Rest 2 Minutes between sets.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Weightlifting -->
-                    <div class="program-card">
-                        <div class="program-header weightlifting-header">
-                            <i class="fas fa-weight-hanging"></i>
-                            <h3>PROGRAM: WEIGHTLIFTING</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Jerk Technique</div>
-                                <div class="exercise-details">
-                                    <p><strong>5 Sets:</strong></p>
-                                    <ul>
-                                        <li>3 Push Press + 1 Split Jerk</li>
-                                    </ul>
-                                    <p class="scale">Hold the receiving position of the Split Jerk for 2 seconds.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Accessory</div>
-                                <div class="exercise-details">
-                                    <p><strong>3 Sets:</strong></p>
-                                    <ul>
-                                        <li>10 Barbell Rows</li>
-                                        <li>10 Weighted Glute Bridges</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="notes">
-                    <h4><i class="fas fa-clipboard-list"></i> NOTAS DEL HEAD COACH (JUEVES)</h4>
-                    <div class="notes-content">
-                        <p><strong>CF:</strong> Bajamos la intensidad de carga (sin barra pesada) pero subimos el volumen aeróbico. El EMOM de 24' tiene descanso incorporado para asegurar que las rondas 5 y 6 sean tan rápidas como la 1.</p>
-                        <p><strong>Endurance:</strong> Volumen básico de calistenia. Perfecto para recuperar el sistema nervioso central.</p>
-                        <p><strong>Haltero:</strong> El Push Press fatiga el hombro para obligar a usar las piernas en el Split Jerk. La pausa de 2s es innegociable.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- VIERNES -->
-            <div class="day-content" id="day-fri">
-                <div class="date-header">
-                    <h2><i class="far fa-calendar-alt"></i> VIERNES 17/01/2026</h2>
-                </div>
-                
-                <div class="programs-container">
-                    <!-- CrossFit -->
-                    <div class="program-card">
-                        <div class="program-header crossfit-header">
-                            <i class="fas fa-fire-alt"></i>
-                            <h3>PROGRAM: CROSSFIT - "THE MUTANT"</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Strength (Complex)</div>
-                                <div class="exercise-details">
-                                    <p><strong>Every 2 Minutes for 10 Minutes (5 Sets):</strong></p>
-                                    <ul>
-                                        <li>1 Power Clean + 1 Hang Squat Clean + 1 Front Squat</li>
-                                    </ul>
-                                    <p class="scale">Build to a heavy complex.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Metcon</div>
-                                <div class="exercise-details">
-                                    <p><strong>AMRAP 12 Minutes:</strong></p>
-                                    <ul>
-                                        <li>4 Bar Muscle-Ups <span class="scale">(Scale: 8 C2B or 8 Pull-ups)</span></li>
-                                        <li>8 Thrusters (43/30 kg)</li>
-                                        <li>12 Box Jump Overs (24"/20")</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Endurance -->
-                    <div class="program-card">
-                        <div class="program-header endurance-header">
-                            <i class="fas fa-running"></i>
-                            <h3>PROGRAM: ENDURANCE</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Format: "Fight Gone Bad" Style</div>
-                                <div class="exercise-details">
-                                    <p><strong>3 Rounds (1 Minute per station, 1 Minute Rest after round):</strong></p>
-                                    <ul>
-                                        <li><strong>Min 1:</strong> Wall Balls</li>
-                                        <li><strong>Min 2:</strong> Sumo Deadlift High Pull (KB or Bar)</li>
-                                        <li><strong>Min 3:</strong> Box Jumps</li>
-                                        <li><strong>Min 4:</strong> Push Press (Dumbbells or Bar)</li>
-                                        <li><strong>Min 5:</strong> Row (Calories)</li>
-                                        <li><strong>Min 6:</strong> Rest</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Weightlifting -->
-                    <div class="program-card">
-                        <div class="program-header weightlifting-header">
-                            <i class="fas fa-weight-hanging"></i>
-                            <h3>PROGRAM: WEIGHTLIFTING</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Max Out Friday</div>
-                                <div class="exercise-details">
-                                    <ul>
-                                        <li>Find a 1RM Snatch (Full Squat)</li>
-                                    </ul>
-                                    <p class="scale">Time Cap: 20 mins.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="exercise-block">
-                                <div class="exercise-title">B) Back Off</div>
-                                <div class="exercise-details">
-                                    <ul>
-                                        <li>2 sets x 2 reps @ 85% of today's max.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="notes">
-                    <h4><i class="fas fa-clipboard-list"></i> NOTAS DEL HEAD COACH (VIERNES)</h4>
-                    <div class="notes-content">
-                        <p><strong>CF:</strong> "The Mutant" combina habilidad gimnástica de alto nivel (BMU) con la fatiga de piernas del Thruster. Es un WOD técnico bajo fatiga. El complex de fuerza previo prepara el sistema nervioso.</p>
-                        <p><strong>Endurance:</strong> Formato clásico de FGB. Todo el mundo trabaja al mismo tiempo, rotando de estación. Intensidad máxima, se cuenta el total de repeticiones.</p>
-                        <p><strong>Haltero:</strong> Día de testeo de Snatch. Ver cómo ha afectado el volumen de la semana.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SÁBADO -->
-            <div class="day-content" id="day-sat">
-                <div class="date-header">
-                    <h2><i class="far fa-calendar-alt"></i> SÁBADO 18/01/2026</h2>
-                </div>
-                
-                <div class="programs-container">
-                    <!-- CrossFit -->
-                    <div class="program-card">
-                        <div class="program-header crossfit-header">
-                            <i class="fas fa-fire-alt"></i>
-                            <h3>PROGRAM: CROSSFIT</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Team WOD (Pairs) - "SYNCHRO FESTIVAL"</div>
-                                <div class="exercise-details">
-                                    <p><strong>For Time (Cap 35'):</strong></p>
-                                    <ul>
-                                        <li><strong>Buy-In:</strong> 1000m Row (Shared)</li>
-                                        <li><strong>Then 4 Rounds:</strong>
-                                            <ul>
-                                                <li>30 Synchro Air Squats</li>
-                                                <li>20 Synchro Alternating DB Snatch (22.5/15 kg)</li>
-                                                <li>10 Synchro Burpees over Line</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Cash-Out:</strong> 1000m Row (Shared)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Endurance -->
-                    <div class="program-card">
-                        <div class="program-header endurance-header">
-                            <i class="fas fa-running"></i>
-                            <h3>PROGRAM: ENDURANCE</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">Format: Team of 3 - Relay</div>
-                                <div class="exercise-details">
-                                    <p><strong>AMRAP 40':</strong></p>
-                                    <ul>
-                                        <li><strong>Athlete A:</strong> 400m Run</li>
-                                        <li><strong>Athlete B:</strong> Max Wall Balls</li>
-                                        <li><strong>Athlete C:</strong> Rest</li>
-                                        <li>Rotate when runner returns.</li>
-                                        <li><strong>Score =</strong> Total Wall Balls accumulated.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Weightlifting -->
-                    <div class="program-card">
-                        <div class="program-header weightlifting-header">
-                            <i class="fas fa-weight-hanging"></i>
-                            <h3>PROGRAM: WEIGHTLIFTING</h3>
-                        </div>
-                        <div class="program-content">
-                            <div class="exercise-block">
-                                <div class="exercise-title">A) Technique Flow</div>
-                                <div class="exercise-details">
-                                    <p><strong>EMOM 12':</strong></p>
-                                    <ul>
-                                        <li><strong>Min 1:</strong> 2 Power Clean + 2 Front Squat (Light)</li>
-                                        <li><strong>Min 2:</strong> 3 Tall Clean (Empty bar)</li>
-                                        <li><strong>Min 3:</strong> 30s Plank</li>
-                                    </ul>
-                                    <p class="scale">Focus on speed under the bar.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="notes">
-                    <h4><i class="fas fa-clipboard-list"></i> NOTAS DEL HEAD COACH (SÁBADO)</h4>
-                    <div class="notes-content">
-                        <p><strong>CF:</strong> Todo sincronizado. Obliga a comunicarse y a esperar al compañero. El remo es compartido para que puedan descansar uno mientras el otro rema fuerte. Divertido y social.</p>
-                        <p><strong>Endurance:</strong> Formato de relevos clásico. La presión está en el corredor (Athlete A) para liberar al que está sufriendo en los Wall Balls (Athlete B).</p>
-                    </div>
+            <div class="feedback-section">
+                <div class="feedback-title">FEEDBACK PARA COACHES</div>
+                <div class="feedback-content">
+                    <p><strong>CF:</strong> Venimos de un lunes de Snatch la semana pasada. Hoy cambiamos radicalmente a Gimnasia y Cardio. El EMOM A es para fatigar el core y los hombros sin impacto. El Metcon B es un sprint clásico de 12 minutos.</p>
+                    <p><strong>Endurance:</strong> Cero impacto articular alto. Mucho remo y ski para proteger las rodillas de los saltos de la clase de CrossFit. Volumen alto, intensidad zona 2/3.</p>
+                    <p><strong>Haltero:</strong> Muscle Snatch para corregir la trayectoria de la barra (evitar el "caderazo"). La pausa en OHS es obligatoria para la estabilidad.</p>
                 </div>
             </div>
         </div>
-        
-        <footer>
-            <p>CrossFit Vallecas - Planificación Semanal 2 | Enero 2026</p>
-            <p>Diseño basado en el esquema original de planificación</p>
-        </footer>
+    </div>
+    
+    <!-- MARTES -->
+    <div class="day-content" id="day-tue">
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-name">Martes</div>
+                <div class="day-date">14/01/2026</div>
+            </div>
+            
+            <!-- Halterofilia -->
+            <div class="program-section">
+                <div class="program-title halterofilia">Halterofilia</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Clean & Jerk Power</div>
+                    <div class="exercise-description">
+                        <p><strong>EMOM 12 Minutes:</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Odd:</strong> 2 Power Cleans (Touch & Go)</li>
+                            <li><strong>Even:</strong> 2 Push Jerks (From Rack)</li>
+                        </ul>
+                        <p class="scale-note">Load: 70-75%. Focus on speed and cycling.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Front Squat</div>
+                    <div class="exercise-description">
+                        <p><strong>3 Sets x 5 Reps:</strong></p>
+                        <ul class="exercise-list">
+                            <li>Tempo 30X1 (3s down, 0s pause, explode up, 1s hold). 65-70%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- Endurance -->
+            <div class="program-section">
+                <div class="program-title endurance">Endurance</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Format: Interval Ladders</strong></p>
+                        <p><strong>5 Sets of:</strong></p>
+                        <ul class="exercise-list">
+                            <li>3 Minutes Work / 90 Seconds Rest
+                                <ul>
+                                    <li>Buy-in: 250m Row</li>
+                                    <li>Max Rounds in remaining time:
+                                        <ul>
+                                            <li>10 Air Squats</li>
+                                            <li>5 Burpees</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="scale-note">Score is total rounds of Squats/Burpees.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- CrossFit -->
+            <div class="program-section">
+                <div class="program-title crossfit">CrossFit</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Strength (Strict Power)</div>
+                    <div class="exercise-description">
+                        <p><strong>Every 2 Minutes for 10 Minutes (5 Sets):</strong></p>
+                        <ul class="exercise-list">
+                            <li>5 Strict Press (Barbell)</li>
+                        </ul>
+                        <p class="scale-note">Ascending weight. No leg drive.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Metcon</div>
+                    <div class="exercise-description">
+                        <p><strong>AMRAP 14 Minutes:</strong></p>
+                        <ul class="exercise-list">
+                            <li>10 Dumbbell Hang Clean & Jerk (22.5/15 kg) - Alternating Arms (5/5)</li>
+                            <li>15 Push-Ups (Hand Release)</li>
+                            <li>30 Double Unders <span class="scale-note">(Scale: 50 Single Unders)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <div class="feedback-title">FEEDBACK PARA COACHES</div>
+                <div class="feedback-content">
+                    <p><strong>CF:</strong> La semana pasada tuvimos Deadlift pesado. Hoy cambiamos a Press Estricto para fuerza de hombro pura. El WOD es de densidad media: hombros y pulmones. Cuidado con los DUs bajo fatiga de hombros.</p>
+                    <p><strong>Endurance:</strong> Intervalos de trabajo/descanso (2:1). El remo es solo el "peaje" para empezar a trabajar. Intensidad alta en los burpees.</p>
+                    <p><strong>Haltero:</strong> Separamos el Clean del Jerk en el EMOM para poder meter más kilos en el Jerk sin la fatiga del Clean previo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MIÉRCOLES -->
+    <div class="day-content" id="day-wed">
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-name">Miércoles</div>
+                <div class="day-date">15/01/2026</div>
+            </div>
+            
+            <!-- Halterofilia -->
+            <div class="program-section">
+                <div class="program-title halterofilia">Halterofilia</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Snatch Positions</div>
+                    <div class="exercise-description">
+                        <p><strong>5 Sets:</strong></p>
+                        <ul class="exercise-list">
+                            <li>1 Hang Snatch (Above Knee) + 1 Hang Snatch (Below Knee)</li>
+                        </ul>
+                        <p class="scale-note">Focus: Pulling under the bar quickly. 65-75%.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Pull Strength</div>
+                    <div class="exercise-description">
+                        <p><strong>4 Sets x 3 Reps:</strong></p>
+                        <ul class="exercise-list">
+                            <li>Snatch Deadlift (Controlled eccentric). 100-110%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- Endurance -->
+            <div class="program-section">
+                <div class="program-title endurance">Endurance</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Format: EMOM 36' (Mixed Modality)</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Min 1:</strong> 15/12 Cal BikeErg (Sprint)</li>
+                            <li><strong>Min 2:</strong> 16 Kettlebell Swings (24/16 kg) - Russian</li>
+                            <li><strong>Min 3:</strong> 12 Box Jumps (Step down allowed)</li>
+                            <li><strong>Min 4:</strong> 40m Shuttle Run (4x10m)</li>
+                            <li><strong>Min 5:</strong> Rest</li>
+                            <li><strong>Min 6:</strong> Rest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- CrossFit -->
+            <div class="program-section">
+                <div class="program-title crossfit">CrossFit</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Strength (Absolute Load)</div>
+                    <div class="exercise-description">
+                        <p><strong>Every 2:30 for 12:30 (5 Sets):</strong></p>
+                        <ul class="exercise-list">
+                            <li>3 Back Squats</li>
+                        </ul>
+                        <p class="scale-note">Load: 75-80% (Heavy but no failure). RPE 8/10.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Metcon</div>
+                    <div class="exercise-description">
+                        <p><strong>For Time (Cap 10') - "Legs Gone"</strong></p>
+                        <p><strong>21 - 15 - 9</strong></p>
+                        <ul class="exercise-list">
+                            <li>Deadlift (100/70 kg)</li>
+                            <li>Bar Facing Burpees</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <div class="feedback-title">FEEDBACK PARA COACHES</div>
+                <div class="feedback-content">
+                    <p><strong>CF:</strong> Día pesado de pierna y espalda. El 21-15-9 es corto y doloroso. Si 100kg es mucho, escalar al 60% del 1RM de Peso Muerto. El objetivo es intensidad máxima, < 7 minutos.</p>
+                    <p><strong>Endurance:</strong> Ciclos de 6 minutos con doble descanso al final. Eso significa que los minutos de trabajo (1-4) deben ser a intensidad muy alta.</p>
+                    <p><strong>Haltero:</strong> Trabajo de posiciones colgantes para mejorar la velocidad de entrada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JUEVES -->
+    <div class="day-content" id="day-thu">
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-name">Jueves</div>
+                <div class="day-date">16/01/2026</div>
+            </div>
+            
+            <!-- Halterofilia -->
+            <div class="program-section">
+                <div class="program-title halterofilia">Halterofilia</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Jerk Technique</div>
+                    <div class="exercise-description">
+                        <p><strong>5 Sets:</strong></p>
+                        <ul class="exercise-list">
+                            <li>3 Push Press + 1 Split Jerk</li>
+                        </ul>
+                        <p class="scale-note">Hold the receiving position of the Split Jerk for 2 seconds.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Accessory</div>
+                    <div class="exercise-description">
+                        <p><strong>3 Sets:</strong></p>
+                        <ul class="exercise-list">
+                            <li>10 Barbell Rows</li>
+                            <li>10 Weighted Glute Bridges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- Endurance -->
+            <div class="program-section">
+                <div class="program-title endurance">Endurance</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Format: Long Distance Intervals</strong></p>
+                        <p><strong>3 Sets:</strong></p>
+                        <ul class="exercise-list">
+                            <li>1000m BikeErg or 500m Row</li>
+                            <li>50 Air Squats</li>
+                            <li>25 Push-ups</li>
+                            <li>Rest 2 Minutes between sets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- CrossFit -->
+            <div class="program-section">
+                <div class="program-title crossfit">CrossFit</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Skill / Activation</div>
+                    <div class="exercise-description">
+                        <p><strong>3 Rounds Not For Time:</strong></p>
+                        <ul class="exercise-list">
+                            <li>10 Ring Rows</li>
+                            <li>10 Hollow Rocks</li>
+                            <li>20s L-Sit Hold (Parallettes or Box)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Metcon</div>
+                    <div class="exercise-description">
+                        <p><strong>EMOM 24 Minutes (Aerobic Capacity):</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Min 1:</strong> 15 Wall Balls (9/6 kg)</li>
+                            <li><strong>Min 2:</strong> 12/10 Cal Row</li>
+                            <li><strong>Min 3:</strong> 10 Burpees to Target</li>
+                            <li><strong>Min 4:</strong> Rest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <div class="feedback-title">FEEDBACK PARA COACHES</div>
+                <div class="feedback-content">
+                    <p><strong>CF:</strong> Bajamos la intensidad de carga (sin barra pesada) pero subimos el volumen aeróbico. El EMOM de 24' tiene descanso incorporado para asegurar que las rondas 5 y 6 sean tan rápidas como la 1.</p>
+                    <p><strong>Endurance:</strong> Volumen básico de calistenia. Perfecto para recuperar el sistema nervioso central.</p>
+                    <p><strong>Haltero:</strong> El Push Press fatiga el hombro para obligar a usar las piernas en el Split Jerk. La pausa de 2s es innegociable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- VIERNES -->
+    <div class="day-content" id="day-fri">
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-name">Viernes</div>
+                <div class="day-date">17/01/2026</div>
+            </div>
+            
+            <!-- Halterofilia -->
+            <div class="program-section">
+                <div class="program-title halterofilia">Halterofilia</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Max Out Friday</div>
+                    <div class="exercise-description">
+                        <ul class="exercise-list">
+                            <li>Find a 1RM Snatch (Full Squat)</li>
+                        </ul>
+                        <p class="scale-note">Time Cap: 20 mins.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Back Off</div>
+                    <div class="exercise-description">
+                        <ul class="exercise-list">
+                            <li>2 sets x 2 reps @ 85% of today's max.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- Endurance -->
+            <div class="program-section">
+                <div class="program-title endurance">Endurance</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Format: "Fight Gone Bad" Style</strong></p>
+                        <p><strong>3 Rounds (1 Minute per station, 1 Minute Rest after round):</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Min 1:</strong> Wall Balls</li>
+                            <li><strong>Min 2:</strong> Sumo Deadlift High Pull (KB or Bar)</li>
+                            <li><strong>Min 3:</strong> Box Jumps</li>
+                            <li><strong>Min 4:</strong> Push Press (Dumbbells or Bar)</li>
+                            <li><strong>Min 5:</strong> Row (Calories)</li>
+                            <li><strong>Min 6:</strong> Rest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- CrossFit -->
+            <div class="program-section">
+                <div class="program-title crossfit">CrossFit</div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">A) Strength (Complex)</div>
+                    <div class="exercise-description">
+                        <p><strong>Every 2 Minutes for 10 Minutes (5 Sets):</strong></p>
+                        <ul class="exercise-list">
+                            <li>1 Power Clean + 1 Hang Squat Clean + 1 Front Squat</li>
+                        </ul>
+                        <p class="scale-note">Build to a heavy complex.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-part">
+                    <div class="part-title">B) Metcon - "THE MUTANT"</div>
+                    <div class="exercise-description">
+                        <p><strong>AMRAP 12 Minutes:</strong></p>
+                        <ul class="exercise-list">
+                            <li>4 Bar Muscle-Ups <span class="scale-note">(Scale: 8 C2B or 8 Pull-ups)</span></li>
+                            <li>8 Thrusters (43/30 kg)</li>
+                            <li>12 Box Jump Overs (24"/20")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <div class="feedback-title">FEEDBACK PARA COACHES</div>
+                <div class="feedback-content">
+                    <p><strong>CF:</strong> "The Mutant" combina habilidad gimnástica de alto nivel (BMU) con la fatiga de piernas del Thruster. Es un WOD técnico bajo fatiga. El complex de fuerza previo prepara el sistema nervioso.</p>
+                    <p><strong>Endurance:</strong> Formato clásico de FGB. Todo el mundo trabaja al mismo tiempo, rotando de estación. Intensidad máxima, se cuenta el total de repeticiones.</p>
+                    <p><strong>Haltero:</strong> Día de testeo de Snatch. Ver cómo ha afectado el volumen de la semana.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SÁBADO -->
+    <div class="day-content" id="day-sat">
+        <div class="day-container">
+            <div class="day-header">
+                <div class="day-name">Sábado</div>
+                <div class="day-date">18/01/2026</div>
+            </div>
+            
+            <!-- Halterofilia -->
+            <div class="program-section">
+                <div class="program-title halterofilia">Halterofilia</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>A) Technique Flow</strong></p>
+                        <p><strong>EMOM 12':</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Min 1:</strong> 2 Power Clean + 2 Front Squat (Light)</li>
+                            <li><strong>Min 2:</strong> 3 Tall Clean (Empty bar)</li>
+                            <li><strong>Min 3:</strong> 30s Plank</li>
+                        </ul>
+                        <p class="scale-note">Focus on speed under the bar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- Endurance -->
+            <div class="program-section">
+                <div class="program-title endurance">Endurance</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Format: Team of 3 - Relay</strong></p>
+                        <p><strong>AMRAP 40':</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Athlete A:</strong> 400m Run</li>
+                            <li><strong>Athlete B:</strong> Max Wall Balls</li>
+                            <li><strong>Athlete C:</strong> Rest</li>
+                            <li>Rotate when runner returns.</li>
+                            <li><strong>Score =</strong> Total Wall Balls accumulated.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- CrossFit -->
+            <div class="program-section">
+                <div class="program-title crossfit">CrossFit</div>
+                
+                <div class="exercise-part">
+                    <div class="exercise-description">
+                        <p><strong>Team WOD (Pairs) - "SYNCHRO FESTIVAL"</strong></p>
+                        <p><strong>For Time (Cap 35'):</strong></p>
+                        <ul class="exercise-list">
+                            <li><strong>Buy-In:</strong> 1000m Row (Shared)</li>
+                            <li><strong>Then 4 Rounds:</strong>
+                                <ul>
+                                    <li>30 Synchro Air Squats</li>
+                                    <li>20 Synchro Alternating DB Snatch (22.5/15 kg)</li>
+                                    <li>10 Synchro Burpees over Line</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cash-Out:</strong> 1000m Row (Shared)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <div class="feedback-title">FEEDBACK PARA COACHES</div>
+                <div class="feedback-content">
+                    <p><strong>CF:</strong> Todo sincronizado. Obliga a comunicarse y a esperar al compañero. El remo es compartido para que puedan descansar uno mientras el otro rema fuerte. Divertido y social.</p>
+                    <p><strong>Endurance:</strong> Formato de relevos clásico. La presión está en el corredor (Athlete A) para liberar al que está sufriendo en los Wall Balls (Athlete B).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-navigation">
+        <button class="nav-btn" id="prev-day-bottom"><i class="fas fa-chevron-left"></i> ANTERIOR</button>
+        <button class="today-btn" id="today-btn-bottom">HOY</button>
+        <button class="nav-btn" id="next-day-bottom">SIGUIENTE <i class="fas fa-chevron-right"></i></button>
+    </div>
+    
+    <div class="footer">
+        <p>CrossFit Vallegas - Programación Semanal 2 | Enero 2026</p>
+        <p>Diseño replicado de las imágenes proporcionadas</p>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Manejo de navegación entre días
-            const dayButtons = document.querySelectorAll('.day-btn');
             const dayContents = document.querySelectorAll('.day-content');
-            const todayBtn = document.getElementById('today-btn');
+            const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+            let currentDayIndex = 0; // Lunes por defecto
             
-            // Obtener el día actual de la semana (0 = domingo, 1 = lunes, ...)
-            const today = new Date();
-            const dayOfWeek = today.getDay(); // 0-6
-            // Ajustar para que 0 (domingo) muestre lunes, 1 (lunes) muestre lunes, etc.
-            const dayIndex = dayOfWeek === 0 ? 0 : dayOfWeek - 1;
+            // Configurar navegación
+            const prevButtons = document.querySelectorAll('#prev-day, #prev-day-bottom');
+            const nextButtons = document.querySelectorAll('#next-day, #next-day-bottom');
+            const todayButtons = document.querySelectorAll('#today-btn, #today-btn-bottom');
             
-            // Función para cambiar día activo
-            function setActiveDay(dayId) {
-                // Remover activo de todos los botones y contenidos
-                dayButtons.forEach(btn => btn.classList.remove('active'));
-                dayContents.forEach(content => content.classList.remove('active'));
+            // Función para mostrar un día específico
+            function showDay(index) {
+                // Asegurar que el índice esté en el rango correcto
+                if (index < 0) index = days.length - 1;
+                if (index >= days.length) index = 0;
                 
-                // Activar el botón y contenido correspondiente
-                document.querySelector(`.day-btn[data-day="${dayId}"]`).classList.add('active');
-                document.getElementById(`day-${dayId}`).classList.add('active');
+                // Ocultar todos los días
+                dayContents.forEach(day => day.classList.remove('active'));
+                
+                // Mostrar el día actual
+                document.getElementById(`day-${days[index]}`).classList.add('active');
+                currentDayIndex = index;
             }
             
-            // Event listeners para botones de días
-            dayButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const dayId = this.getAttribute('data-day');
-                    setActiveDay(dayId);
+            // Event listeners para botones de navegación
+            prevButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showDay(currentDayIndex - 1);
                 });
             });
             
-            // Event listener para botón "HOY"
-            todayBtn.addEventListener('click', function() {
-                // Mapear índice del día a los IDs de días (0=lunes, 1=martes, ...)
-                const dayMap = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-                const todayId = dayIndex < 6 ? dayMap[dayIndex] : 'sat';
-                setActiveDay(todayId);
+            nextButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showDay(currentDayIndex + 1);
+                });
             });
             
-            // Inicializar con el día actual
-            const dayMap = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-            const initialDayId = dayIndex < 6 ? dayMap[dayIndex] : 'mon';
-            setActiveDay(initialDayId);
+            // Event listeners para botones "HOY"
+            todayButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Para simular "hoy", mostramos el lunes (índice 0)
+                    // En una implementación real, usaríamos la fecha actual
+                    showDay(0);
+                });
+            });
             
-            // Añadir efecto de hover a las tarjetas de programa
-            const programCards = document.querySelectorAll('.program-card');
-            programCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
+            // Inicializar mostrando el lunes
+            showDay(0);
+            
+            // También podemos permitir navegación con teclado
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    showDay(currentDayIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    showDay(currentDayIndex + 1);
+                }
             });
         });
     </script>
